@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_25_195646) do
+ActiveRecord::Schema.define(version: 2019_09_25_205509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,14 @@ ActiveRecord::Schema.define(version: 2019_09_25_195646) do
   create_table "objectives", force: :cascade do |t|
     t.string "name"
     t.boolean "finished", default: true
+    t.integer "user_id"
   end
 
   create_table "tasks", force: :cascade do |t|
     t.string "taskname"
     t.string "description"
     t.boolean "finished", default: true
+    t.integer "objective_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,6 +39,8 @@ ActiveRecord::Schema.define(version: 2019_09_25_195646) do
     t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
+    t.integer "cohort_id"
+    t.string "session_token"
   end
 
 end
