@@ -10,35 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_25_205509) do
+ActiveRecord::Schema.define(version: 2019_09_26_185055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cohorts", force: :cascade do |t|
-    t.string "year"
+    t.string "year", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "objectives", force: :cascade do |t|
-    t.string "name"
-    t.boolean "finished", default: true
+    t.string "name", null: false
+    t.boolean "finished", default: false
     t.integer "user_id"
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "taskname"
-    t.string "description"
-    t.boolean "finished", default: true
+    t.string "taskname", null: false
+    t.string "description", null: false
+    t.boolean "finished", default: false
     t.integer "objective_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.string "first_name"
-    t.string "last_name"
+    t.string "email", null: false
+    t.string "password_digest", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.integer "cohort_id"
     t.string "session_token"
   end
