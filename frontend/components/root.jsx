@@ -6,11 +6,11 @@ import App from './app'
 export default ({store})=>{
     return(
         <>
-            {/* <Provider store={store}> */}
+            <Provider store={store}>
                 <HashRouter>
                     <App />
                 </HashRouter>
-            {/* </Provider> */}
+            </Provider>
         </>
     )                        
 }
