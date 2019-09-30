@@ -16,6 +16,8 @@
     margin-bottom: 20px;
 }
 .sign-in button{
+    cursor: not-allowed;
+    font-size: 20px;
     margin: auto;
     margin-top: 20px;
     width: 150px;
@@ -23,12 +25,18 @@
     background: black;
     opacity: 0.6;
     color: white;
-    padding: 15px 15px;
+    padding: 15px 15px; 
+    transition: 0.3s;
 }
-.sign-in-check button:hover{
+.sign-in-check{
+    border: 1px solid white;
+    color: white;
+}
+.sign-in-check:hover{
     opacity: 1;
     border: 1px solid #00BFFF;
     color: #00BFFF;
+    cursor: pointer;
 }
 .sign-in-form{
     color: grey;
@@ -44,5 +52,9 @@
     outline: none;
     box-shadow: none;
     border-radius: 3px;
+}
+.errors{
+    color: red;
+    font-size: 20px;
 }
 
