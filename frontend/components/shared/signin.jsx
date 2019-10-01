@@ -13,7 +13,6 @@ class SignIn extends React.Component {
     checkInput(){
         if(this.state.email.length > 4){
             if(this.state.password.length > 4 ){
-                debugger
                 return "sign-in-check"
             }
         }
