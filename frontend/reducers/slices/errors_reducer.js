@@ -4,8 +4,7 @@ const errorsReducer = (state = {}, action)=>{
     Object.freeze(state)
     switch(action.type){
         case LOGIN_ERRORS:
-            debugger
-            return action.errors 
+            return action.errors.responseJSON
         default:
             return state
     }

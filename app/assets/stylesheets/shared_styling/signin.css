@@ -2,9 +2,12 @@
     min-width: 400px;
     width: 40%;
     margin: auto;
-    margin-top: 60px;
-    padding: 40px 20px;
+    padding: 40px 20px; 
     border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     background: black;
@@ -34,8 +37,8 @@
 }
 .sign-in-check:hover{
     opacity: 1;
-    border: 1px solid #00BFFF;
-    color: #00BFFF;
+    border: 1px solid rgb(0, 255, 0);
+    color: rgb(0, 255, 0);
     cursor: pointer;
 }
 .sign-in-form{
@@ -46,7 +49,7 @@
 
 }
 .sign-in-form input{
-    width: 90%;
+    width: 100%;
     margin-bottom: 10px;
     margin-top: 10px;
     outline: none;
@@ -56,5 +59,8 @@
 .errors{
     color: red;
     font-size: 20px;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 15px;
 }
 

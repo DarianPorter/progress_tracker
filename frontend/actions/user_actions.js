@@ -21,9 +21,9 @@ export const thunkLogin = (userInfo)=>{
     return (dispatch)=>{
         return ApiUtil.loginUser(userInfo).then(
             (payload)=>{
-                dispatch(login(payload))
+                return dispatch(login(payload))
             },(response)=>{
-                dispatch(loginErrors(response))
+                return dispatch(loginErrors(response))
             }   
         )
     }
