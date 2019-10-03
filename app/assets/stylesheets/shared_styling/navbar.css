@@ -30,4 +30,9 @@
     box-shadow: none;
     height: 45px;
     margin-left: 20px; 
+    transition: 0.3s;
+}
+.right-nav-content button:hover{
+    color: white;
+    background: black;
 }

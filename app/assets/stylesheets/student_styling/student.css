@@ -1,0 +1,24 @@
+.student{
+    margin-top: 102px;
+}
+.task-navigation{
+    display: flex;
+    font-size: 30px;
+    width: fit-content;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.left{
+    color: rgb(0, 255, 0);
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.right{
+    color: rgb(0, 255, 0);
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.seperator{
+    border-bottom: 2px solid white;
+}

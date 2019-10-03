@@ -6,7 +6,8 @@ const sessionReducer = (state = {id: null}, action)=>{
         case LOGIN_USER:
             return { id: action.user.id }
         case LOGOUT_USER:
-            return {id: null}
+            debugger
+            return { id: null }
         default:
             return state
     }

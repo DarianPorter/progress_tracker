@@ -38,7 +38,7 @@ export const thunkLogin = (userInfo)=>{
 
 export const thunkLogout = ()=>{
     return (dispatch)=>{
-        return ApiUtil.logoutUser().then(payload).then(
+        return ApiUtil.logoutUser().then(
             ()=>{
                 return dispatch(logout())  
             }

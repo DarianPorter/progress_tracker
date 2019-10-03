@@ -1,10 +1,8 @@
 import React from "react"
 import {connect} from "react-redux" 
+import {thunkLogout} from "../../actions/user_actions"
 
 const Navbar = (props)=>{
-    const handleSignOut = ()=>{
-
-    }
 
     return(
         <div className="navbar">
@@ -14,7 +12,8 @@ const Navbar = (props)=>{
                     <p>Welcome</p>
                     <p> {`${props.user.first_name} ${props.user.last_name}`}</p>
                 </div>
-                <button>
+                <button onClick={
+                    ()=>{props.logout()}}>
                     Sign Out
                 </button>
             </div>
@@ -27,9 +26,9 @@ const msp = (state)=>{
         user: state.entities.users[state.session.id]
     })
 }
-const mdp = ()=>{
+const mdp = (dispatch)=>{
     return({
-
+        logout: ()=>{return dispatch(thunkLogout())}
     })
 }
 
