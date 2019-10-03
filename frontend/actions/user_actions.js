@@ -2,11 +2,18 @@ import * as ApiUtil from '../util/user_util'
 
 export const LOGIN_USER = "LOGIN_USER"
 export const LOGIN_ERRORS = "LOGIN_ERRORS"
+export const LOGOUT_USER = "LOGOUT_USER"
 
 const login = (userInfo)=>{
     return ({
         type: LOGIN_USER,
         user: userInfo
+    })
+}
+
+const logout = ()=>{
+    return({
+        type: LOGOUT_USER
     })
 }
 
@@ -25,6 +32,16 @@ export const thunkLogin = (userInfo)=>{
             },(response)=>{
                 return dispatch(loginErrors(response))
             }   
+        )
+    }
+}
+
+export const thunkLogout = ()=>{
+    return (dispatch)=>{
+        return ApiUtil.logoutUser().then(payload).then(
+            ()=>{
+                return dispatch(logout())  
+            }
         )
     }
 }

@@ -5,3 +5,9 @@ export const loginUser = (loginInfo)=>{
         data: {user: loginInfo}
     })
 }
+export const logoutUser = ()=>{
+    return $.ajax({
+        method: "DELETE",
+        url: "/api/session"
+    })
+}

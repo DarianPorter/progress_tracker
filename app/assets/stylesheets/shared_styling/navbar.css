@@ -1,0 +1,33 @@
+.navbar{
+    height: 80px;
+    border-bottom: 2px solid white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navbar img{
+    box-sizing: border-box;
+    height: inherit;
+}
+
+.right-nav-content{
+    display: flex;
+    align-items: center;
+}
+
+.right-nav-content p{
+    font-size: 16px;
+}
+
+.right-nav-content button{
+    border-radius: 10px;
+    background: white;
+    box-shadow: none;
+    height: 45px;
+    margin-left: 20px; 
+}

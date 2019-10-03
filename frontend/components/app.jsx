@@ -10,7 +10,11 @@ let App = ()=>{
         <>
             <Switch>
                 <AuthRoute exact path="/signin" component={SignIn} />
+                <ProtectedRoute path="/" component={Navbar}/>
+            </Switch>
+            <Switch>
                 <ProtectedRoute path="/users/:user_id" component={Student} />
+
             </Switch>
 
         </>

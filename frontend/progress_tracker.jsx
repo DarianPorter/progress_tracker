@@ -5,9 +5,12 @@ import configureStore from './util/store'
 
 document.addEventListener("DOMContentLoaded",()=>{
     let store = null;
-    if(window.current_user){
+    if(window.currentUser){
         let preloadedState = {
-             
+            session: { id: window.currentUser.id },
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            }
         }
         store = configureStore(preloadedState)
     }else{

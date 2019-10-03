@@ -6,7 +6,7 @@ const errorsReducer = (state = {}, action)=>{
         case LOGIN_ERRORS:
             return action.errors.responseJSON
         default:
-            return state
+            return []
     }
 }
 

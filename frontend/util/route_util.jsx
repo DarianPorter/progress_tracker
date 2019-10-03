@@ -2,14 +2,15 @@ import React from "react"
 import { connect } from "react-redux"
 import {withRouter, Route, Redirect} from "react-router-dom"
 
-const Auth = ({ component: Component, path: path, loggedIn: loggedIn, exact: exact })=>{
+const Auth = ({ component: Component, path: path, loggedIn: loggedIn, exact: exact, user_id: user_id })=>{
     return <Route path={path} exact={exact} render={(props) => {
 
         return (
             !loggedIn ? (
                 <Component {...props} />
             ) : (
-                    <Redirect to="/" />
+                <Redirect to={`users/${user_id}`} />
+                // <Redirect to="/" />
             )
         )
     }} />
@@ -17,7 +18,6 @@ const Auth = ({ component: Component, path: path, loggedIn: loggedIn, exact: exa
 
 const Protected = ({ component: Component, path: path, loggedIn: loggedIn, exact: exact })=>{
     return < Route path={path} exact={exact} render={(props)=>{
-        console.log(loggedIn)
         return (
             loggedIn ? (
                 <Component {...props} />
@@ -28,9 +28,10 @@ const Protected = ({ component: Component, path: path, loggedIn: loggedIn, exact
     }}/>
 }
 
-let msp = ()=>{
+let msp = (state)=>{
     return{
-
+        loggedIn: Boolean(state.session.id),
+        user_id: state.session.id
     }
 }
 

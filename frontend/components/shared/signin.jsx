@@ -1,5 +1,5 @@
 import React from "react" 
-import { Redirect } from "react-router-dom"
+// import { Redirect } from "react-router-dom"
 import {connect} from "react-redux"
 import { handleChange } from "../../util/component_util"
 import { thunkLogin } from '../../actions/user_actions'
@@ -13,11 +13,18 @@ class SignIn extends React.Component {
         };
     }
 
-    componentDidUpdate(){
-        if(this.props.userId){
-            this.props.history.push(`/users/${this.props.userId}`)
-        }
-    }
+    // componentDidUpdate(){
+      
+    // }
+    // componentWillUnmount(){
+    //     debugger
+
+    //     if (this.props.userId) {
+    //         debugger
+    //         this.props.history.push(`/users/${this.props.userId}`)
+    //     }
+    // }
+
 
     checkInput(){
         if(this.state.email.length >= 4){
