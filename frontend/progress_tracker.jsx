@@ -6,7 +6,6 @@ import configureStore from './util/store'
 document.addEventListener("DOMContentLoaded",()=>{
     let store = null;
     if(window.current_user){
-        debugger
         let preloadedState = {
              
         }

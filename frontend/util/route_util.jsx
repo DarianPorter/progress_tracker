@@ -4,6 +4,7 @@ import {withRouter, Route, Redirect} from "react-router-dom"
 
 const Auth = ({ component: Component, path: path, loggedIn: loggedIn, exact: exact })=>{
     return <Route path={path} exact={exact} render={(props) => {
+
         return (
             !loggedIn ? (
                 <Component {...props} />
@@ -15,12 +16,12 @@ const Auth = ({ component: Component, path: path, loggedIn: loggedIn, exact: exa
 }
 
 const Protected = ({ component: Component, path: path, loggedIn: loggedIn, exact: exact })=>{
-    return < Route path={path} exact={exact} render={()=>{
+    return < Route path={path} exact={exact} render={(props)=>{
         return (
-            !loggedIn ? (
+            loggedIn ? (
                 <Component {...props} />
             ) : (
-                <Redirect to="signin" />
+                <Redirect to="/signin" />
             )
         )
     }}/>

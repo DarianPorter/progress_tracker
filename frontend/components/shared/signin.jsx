@@ -1,4 +1,5 @@
 import React from "react" 
+import { Redirect } from "react-router-dom"
 import {connect} from "react-redux"
 import { handleChange } from "../../util/component_util"
 import { thunkLogin } from '../../actions/user_actions'
@@ -9,6 +10,12 @@ class SignIn extends React.Component {
         this.state = {
             email: "",
             password: ""
+        };
+    }
+
+    componentDidUpdate(){
+        if(this.props.userId){
+            this.props.history.push(`/users/${this.props.userId}`)
         }
     }
 
@@ -23,6 +30,16 @@ class SignIn extends React.Component {
     
     handleErrors(){
         return this.props.loginErrors === null ? null : this.props.loginErrors
+    }
+
+    handleSubmit(){
+        if(this.state.email.length >= 4 && this.state.password.length >= 4){
+            this.props.login(this.state);
+            this.setState({
+                email: "",
+                password: ""
+            });
+        }
     }
     
     render(){
@@ -53,7 +70,7 @@ class SignIn extends React.Component {
                         />
                     </label>
                 </div>
-                <button className={this.checkInput()} onClick={() => {this.props.login(this.state) }}>
+                <button className={this.checkInput()} onClick={() => { this.handleSubmit()}}>
                     Log me in!
                 </button>
             </div>
@@ -63,7 +80,8 @@ class SignIn extends React.Component {
 
 const msp = (state)=>{
     return({
-        loginErrors: state.errors[0]
+        loginErrors: state.errors[0],
+        userId: state.session.id
     })
 }
 
