@@ -3,6 +3,7 @@ import { Switch } from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import SignIn from './shared/signin'
 import Student from './student/student'
+import Navbar from './shared/navbar'
 
 let App = ()=>{
     return(
@@ -11,6 +12,7 @@ let App = ()=>{
                 <AuthRoute exact path="/signin" component={SignIn} />
                 <ProtectedRoute path="/users/:user_id" component={Student} />
             </Switch>
+
         </>
     )
 }
