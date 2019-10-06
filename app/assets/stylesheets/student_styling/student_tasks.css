@@ -1,0 +1,74 @@
+.tasks_and_visuals{
+    display: flex;
+}
+
+.task-visuals{
+    width : 40%;
+    height: 200px;
+    border-right: 2px solid white
+}
+
+.tasks{
+    width : 60%;
+    height: 200px;
+    
+}
+
+.task-visuals h1{
+    font-size: 24px;
+    margin: auto;
+    width: fit-content;
+    margin-top: 10px;
+     text-decoration: underline;
+}
+
+.tasks h1{
+    font-size: 24px;
+    margin: auto;
+    width: fit-content;
+    margin-top: 10px;
+     text-decoration: underline;
+}
+
+.incomplete{
+    color: red;
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.complete{
+    color: rgb(0, 255, 0);
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    font-size: 16px;
+    margin-top: 10px;    
+}
+.task-li{
+    padding: 20px 10px;
+}
+
+.task-header{
+    display: flex;
+    font-size: 20px;
+}
+
+.task-header h3{
+    padding-left: 5px;
+}
+
+.task-description{
+    padding-top: 10px;
+    font-size: 18px;
+}
+
+
+.fa-check-circle{
+    color: rgb(0, 255, 0);
+}
+.fa-times-circle{
+    color: red;
+}

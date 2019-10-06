@@ -11,13 +11,13 @@ class Navigation extends React.Component{
             <>
                 <div className="task-navigation">
                     <div className="left">
-                        {"<"}
+                        <i className="far fa-caret-square-left"></i>
                     </div>
                     <div className="Objective">
-                        OBJECTIVE NAME HERE
+                        {this.props.objective.name}
                     </div>
                     <div className="right">
-                        {">"}
+                        <i className="far fa-caret-square-right"></i>
                     </div>
                 </div>
                 <div className="seperator">
