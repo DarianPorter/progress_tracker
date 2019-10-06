@@ -22,3 +22,6 @@
 .seperator{
     border-bottom: 2px solid white;
 }
+.objective{
+    width: fit-content;
+}

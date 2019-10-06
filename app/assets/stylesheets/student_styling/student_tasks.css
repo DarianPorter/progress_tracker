@@ -4,7 +4,6 @@
 
 .task-visuals{
     width : 40%;
-    height: 200px;
     border-right: 2px solid white
 }
 
@@ -19,7 +18,7 @@
     margin: auto;
     width: fit-content;
     margin-top: 10px;
-     text-decoration: underline;
+    text-decoration: underline;
 }
 
 .tasks h1{
@@ -27,7 +26,7 @@
     margin: auto;
     width: fit-content;
     margin-top: 10px;
-     text-decoration: underline;
+    text-decoration: underline;
 }
 
 .incomplete{
@@ -49,6 +48,7 @@
 }
 .task-li{
     padding: 20px 10px;
+    border-bottom: 2px solid white;
 }
 
 .task-header{
@@ -58,6 +58,7 @@
 
 .task-header h3{
     padding-left: 5px;
+    text-decoration: underline;
 }
 
 .task-description{
@@ -65,6 +66,16 @@
     font-size: 18px;
 }
 
+.circle-chart-container{
+    border: 2px solid red;
+    margin-top: 10px;
+}
+
+.circle-chart-container:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
 
 .fa-check-circle{
     color: rgb(0, 255, 0);

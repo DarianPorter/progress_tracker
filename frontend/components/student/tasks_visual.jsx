@@ -24,7 +24,7 @@ class TasksVisuals extends React.Component {
             < div className="task-visuals">
                 <h1>Completion Chart</h1>
                 {this.completionCheck()}
-                <div className="circle-chart">
+                <div className="circle-chart-container">
                     
                 </div>
             </ div>
