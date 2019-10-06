@@ -28,13 +28,13 @@ class Navigation extends React.Component{
     }
 }
 
-const msp = ()=>{
+const msp = (state)=>{
     return({
 
     })
 }
 
-const mdp = ()=>{
+const mdp = (dispatch)=>{
     return({
 
     })

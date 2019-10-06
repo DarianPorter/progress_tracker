@@ -1,7 +1,7 @@
 class Api::SessionsController < ApplicationController
 
     def create
-        @user = User.find_by_cred(
+        @user = User.includes(objectives: [:tasks]).find_by_cred(
             session_params[:email], 
             session_params[:password]
         )
