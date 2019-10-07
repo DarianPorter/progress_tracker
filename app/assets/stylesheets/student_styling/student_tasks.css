@@ -1,5 +1,6 @@
 .tasks_and_visuals{
     display: flex;
+    padding: 0px 50px;
 }
 
 .task-visuals{
@@ -66,15 +67,25 @@
     font-size: 18px;
 }
 
-.circle-chart-container{
+.chart-container{
+    position: relative;
     border: 2px solid red;
     margin-top: 10px;
+    display: flex;
 }
 
-.circle-chart-container:after {
+.chart-container:after {
   content: "";
   display: block;
   padding-bottom: 100%;
+}
+
+.empty-block{
+    width: 60%;
+    height: 100px;
+    border: 2px solid white;
+    margin: auto;
+    position: absolute;
 }
 
 .fa-check-circle{

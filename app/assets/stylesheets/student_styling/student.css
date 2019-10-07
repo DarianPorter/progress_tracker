@@ -1,6 +1,7 @@
 .student{
     margin-top: 102px;
 }
+
 .task-navigation{
     display: flex;
     font-size: 30px;
@@ -9,15 +10,27 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
 .left{
     color: rgb(0, 255, 0);
     margin-right: 20px;
     margin-left: 20px;
 }
+
 .right{
     color: rgb(0, 255, 0);
     margin-right: 20px;
     margin-left: 20px;
+}
+
+.left:hover{
+    cursor: pointer;
+    color: rgb(0, 200, 0)
+}
+
+.right:hover{
+    cursor: pointer;
+    color: rgb(0, 200, 0)
 }
 .seperator{
     border-bottom: 2px solid white;
