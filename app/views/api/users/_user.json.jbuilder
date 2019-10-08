@@ -9,7 +9,7 @@
                 json.set! :tasks do 
                     obj.tasks.each do |task|
                         json.set! task.id do 
-                            json.extract! task, :taskname, :description, :finished 
+                            json.extract! task, :taskname, :description, :finished, :pending 
                         end 
                     end 
                 end 

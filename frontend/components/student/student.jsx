@@ -9,14 +9,19 @@ class StudentPage extends React.Component {
     constructor(props){
         super(props)
     }
-    
+    getStudentsObjectiveKeys(){
+        return Object.keys(this.props.objectives)
+    }
     render(){
+        let keys = this.getStudentsObjectiveKeys()
+        let key = keys[this.props.objectiveKey]
+        let objectives = this.props.objectives;
         return(
             <div className="student">
-                <Navigation objective={this.props.objectives[2]} />
+                <Navigation objective={objectives[key]} objectives={objectives} />
                 <div className="tasks_and_visuals">
-                    <TasksVisual objective={this.props.objectives[2]} />
-                    <Tasks tasks={this.props.objectives[2].tasks}/>
+                    <TasksVisual objective={objectives[key]} />
+                    <Tasks tasks={objectives[key].tasks}/>
                 </div>
             </div>
         )
@@ -27,6 +32,7 @@ const msp = (state) => {
     let user_id = state.session.id
     return ({
         objectives: state.entities.users[user_id].objectives,
+        objectiveKey: state.ui.objectiveInd
     })
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { changeObjectiveCurryed } from "../../actions/ui_actions"
 
 class Navigation extends React.Component{
     constructor(props){
@@ -18,18 +19,38 @@ class Navigation extends React.Component{
         return complete + "/" + keys.length
     }
 
+    handleObjSwitch(direction){
+        let currentInd = this.props.objectiveInd;
+        let totalObjectives = Object.keys(this.props.objectives).length
+        let nextInd = currentInd
+        if(currentInd + direction <= -1){
+            nextInd = totalObjectives - 1
+        }else if (currentInd + direction >= totalObjectives){
+            nextInd = 0
+        }else {
+            nextInd += direction
+        }
+        this.props.changeObjective(nextInd);
+    }
+
     render(){
         return(
             <>
                 <div className="task-navigation">
                     <div className="left">
-                        <i className="far fa-caret-square-left"></i>
+                        <i 
+                            className="far fa-caret-square-left"
+                            onClick={()=>{ return this.handleObjSwitch(-1)}}
+                        ></i>
                     </div>
                     <div className="objective">
                         {this.props.objective.name + " " + this.outOfTotal()}
                     </div>
                     <div className="right">
-                        <i className="far fa-caret-square-right"></i>
+                        <i 
+                            className="far fa-caret-square-right"
+                            onClick={() => { return this.handleObjSwitch(1) }}
+                        ></i>
                     </div>
                 </div>
                 <div className="seperator">
@@ -42,13 +63,13 @@ class Navigation extends React.Component{
 
 const msp = (state)=>{
     return({
-
-    })
+        objectiveInd: state.ui.objectiveInd
+    });
 }
 
 const mdp = (dispatch)=>{
     return({
-
+        changeObjective: (val) => { return dispatch(changeObjectiveCurryed(val))}
     })
 }
 

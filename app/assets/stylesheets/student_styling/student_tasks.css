@@ -5,12 +5,13 @@
 
 .task-visuals{
     width : 40%;
-    border-right: 2px solid white
+    border-right: 2px solid white;
+    border-left: 2px solid white;
 }
 
 .tasks{
     width : 60%;
-    height: 200px;
+    border-right: 2px solid white;
     
 }
 
@@ -37,6 +38,7 @@
     margin: auto;
     font-size: 16px;
     margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .complete{
@@ -69,7 +71,6 @@
 
 .chart-container{
     position: relative;
-    border: 2px solid red;
     margin-top: 10px;
     display: flex;
 }
@@ -82,10 +83,11 @@
 
 .empty-block{
     width: 60%;
-    height: 100px;
+    /* height: 100px; */
     border: 2px solid white;
     margin: auto;
     position: absolute;
+    right: 20%;
 }
 
 .fa-check-circle{

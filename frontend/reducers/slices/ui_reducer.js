@@ -1,6 +1,7 @@
+import { merge } from 'lodash';
 import { CHANGE_OBJECTIVE_INDEX } from "../../actions/ui_actions"
 
-preLoadedState = {
+let preLoadedState = {
     objectiveInd: 0
 };
 
@@ -9,7 +10,8 @@ const uiReducer = (state = preLoadedState, action)=>{
 
     switch (action.type){
         case CHANGE_OBJECTIVE_INDEX:
-            return state["objectiveInd"] = action.ind;
+            let newState =  merge({}, state, { objectiveInd: action.val})
+            return newState
         default: 
             return state
     }

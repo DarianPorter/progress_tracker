@@ -1,14 +1,15 @@
-const CHANGE_OBJECTIVE_INDEX = "CHANGE_OBJECTIVE_INDEX"
+export const CHANGE_OBJECTIVE_INDEX = "CHANGE_OBJECTIVE_INDEX"
 
-const change_objective = (uiInfo) => {
+const changeObjective = (val) => {
     return({
         type: CHANGE_OBJECTIVE_INDEX,
-        uiInfo: uiInfo
+        val: val
     })
 }
-const change_objective_curryed = (uiInfo)=>{
+
+export const changeObjectiveCurryed = (val)=>{
     return (dispatch)=>{
-        return dispatch(change_objective(uiInfo))
+        return dispatch(changeObjective(val))
     }
 }
 

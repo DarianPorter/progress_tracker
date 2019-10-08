@@ -12,25 +12,25 @@
 }
 
 .left{
-    color: rgb(0, 255, 0);
+    color: #33bdc6;
     margin-right: 20px;
     margin-left: 20px;
 }
 
 .right{
-    color: rgb(0, 255, 0);
+    color: #33bdc6;
     margin-right: 20px;
     margin-left: 20px;
 }
 
 .left:hover{
     cursor: pointer;
-    color: rgb(0, 200, 0)
+    color: #0095a0;
 }
 
 .right:hover{
     cursor: pointer;
-    color: rgb(0, 200, 0)
+    color: #0095a0;
 }
 .seperator{
     border-bottom: 2px solid white;
