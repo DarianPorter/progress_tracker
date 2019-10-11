@@ -11,3 +11,9 @@ export const logoutUser = ()=>{
         url: "/api/session"
     })
 }
+export const fetchStudents = ()=>{
+    return $.ajax({
+        method: "GET",
+        url: "/api/users"
+    })
+}

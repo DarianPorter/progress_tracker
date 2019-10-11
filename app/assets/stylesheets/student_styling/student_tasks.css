@@ -67,6 +67,7 @@
 .task-description{
     padding-top: 10px;
     font-size: 18px;
+    width: 90%;
 }
 
 .chart-container{
@@ -88,6 +89,26 @@
     margin: auto;
     position: absolute;
     right: 20%;
+}
+.description-and-submit{
+    display: flex;
+}
+
+.description-and-submit button{
+    margin-top: 10px;
+    border-radius: 10px;
+    background: #0095a0;
+    box-shadow: none;
+    height: 45px;
+    margin-left: 20px; 
+    transition: 0.3s;
+}
+.description-and-submit button:hover{
+    color: white;
+    background: black;
+}
+.task-ul{
+    overflow: scroll;
 }
 
 .fa-check-circle{

@@ -1,0 +1,1 @@
+json.extract! @task, :taskname, :description, :finished, :pending, :url 

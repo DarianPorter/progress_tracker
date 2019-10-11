@@ -3,6 +3,14 @@ import * as ApiUtil from '../util/user_util'
 export const LOGIN_USER = "LOGIN_USER"
 export const LOGIN_ERRORS = "LOGIN_ERRORS"
 export const LOGOUT_USER = "LOGOUT_USER"
+export const FETCH_USERS = "FETCH_USERS"
+
+const fetchStudents =(users)=>{
+    return({
+        type: FETCH_USERS,
+        users: users
+    })
+}
 
 const login = (userInfo)=>{
     return ({
@@ -22,6 +30,16 @@ const loginErrors = (errors)=>{
         type: LOGIN_ERRORS,
         errors: errors
     })
+}
+
+export const thunkFetchStudents = ()=>{
+    return (dispatch)=>{
+        return ApiUtil.fetchStudents().then(
+            (payload)=>{
+                dispatch(fetchStudents(payload))
+            }
+        )
+    }
 }
 
 export const thunkLogin = (userInfo)=>{

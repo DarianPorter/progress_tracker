@@ -13,6 +13,13 @@ class StudentPage extends React.Component {
         return Object.keys(this.props.objectives)
     }
     render(){
+        if (!this.props.objectives){
+            return (
+                <div>
+                    <h1 className="student"> No Objectives </h1>
+                </div>
+            )
+        }
         let keys = this.getStudentsObjectiveKeys()
         let key = keys[this.props.objectiveKey]
         let objectives = this.props.objectives;

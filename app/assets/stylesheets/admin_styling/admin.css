@@ -1,0 +1,30 @@
+.admin{
+    margin-top: 102px;
+}
+.admin-nav{
+    font-size: 26px;
+    border-bottom: 2px solid white; 
+}
+.controlls{
+    width: fit-content;
+    display: flex;
+    margin: auto;
+    
+}
+.controlls p{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-right: 2px solid white; 
+    border-left: 2px solid white;
+    box-sizing: border-box; 
+    transition: 0.3s;
+}
+.controlls p:hover{
+    background: white;
+    color: black;
+}
+.selected{
+    background: rgb(0, 149, 160);
+}
