@@ -1,4 +1,4 @@
-class Api::TaskController < ApplicationController
+class Api::TasksController < ApplicationController
     def update
        @task = Task.find(task_params[:id])
        @task.update(task_params)

@@ -50,7 +50,7 @@
     margin-top: 10px;    
 }
 .task-li{
-    padding: 20px 10px;
+    padding: 10px 10px;
     border-bottom: 2px solid white;
 }
 
@@ -109,6 +109,40 @@
 }
 .task-ul{
     overflow: scroll;
+}
+.link-edit{
+    display: flex;
+    justify-content: space-between;
+}
+
+.work-link{
+    padding-top: 10px;
+    font-size: 18px;
+    color: #33bdc6;
+    transition: .3s;
+}
+.work-link:hover{
+    color: #0095a0;
+}
+.edit-work-link{
+    padding: 10px 0px;
+}
+.edit-work-link button{
+    margin-left: 10px;
+    /* border: none; */
+    padding: 5px 5px;
+    border-radius: 5px;
+    background: white;
+    transition: .3s;
+}
+.edit-work-link button:hover{
+    background: black;
+    color: white;
+}
+.edit-work-link input{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 5px;
 }
 
 .fa-check-circle{
