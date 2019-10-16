@@ -13,6 +13,7 @@ export const deleteTask = (taskInfo)=>{
 }
 
 export const updateTask = (taskInfo) =>{
+    debugger
     return $.ajax({
         method: "PATCH",
         url: `api/objectives/${taskInfo.objective_id}/tasks/${taskInfo.id}`,
