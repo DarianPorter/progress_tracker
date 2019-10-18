@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Navigation from "./navigation"
 import { thunkFetchStudents } from "../../actions/user_actions"
+import { thunkFetchTasks } from "../../actions/task_actions"
 
 class Admin extends React.Component {
     constructor(props){
@@ -10,6 +11,7 @@ class Admin extends React.Component {
 
     componentDidMount(){
         this.props.fetchUsers();
+        this.props.fetchTasks();
     }
 
     render(){
@@ -23,13 +25,13 @@ class Admin extends React.Component {
 
 const msp = (state)=>{
     return({
-
     })
 }
 
 const mdp = (dispatch)=>{
     return({
-        fetchUsers: () => { return dispatch(thunkFetchStudents())}
+        fetchUsers: () => { return dispatch(thunkFetchStudents())},
+        fetchTasks: () => { return dispatch(thunkFetchTasks())}
     })
 }
 

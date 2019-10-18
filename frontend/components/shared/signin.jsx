@@ -14,7 +14,10 @@ class SignIn extends React.Component {
     }
 
     componentDidUpdate(){
-        if (this.props.userId) {
+        debugger
+        if(this.props.isAdmin){
+            this.props.history.push(`/admin`)
+        }else if (this.props.userId) {
             this.props.history.push(`users/${this.props.userId}`)
         }
     }
@@ -79,9 +82,13 @@ class SignIn extends React.Component {
 }
 
 const msp = (state)=>{
+    let users = state.entities.users;
+    let user_id = state.session.id;
+    let isAdmin = users[user_id] ? users[user_id].is_admin : false;
     return({
         loginErrors: state.errors[0],
-        userId: state.session.id
+        userId: state.session.id,
+        isAdmin: isAdmin
     })
 }
 

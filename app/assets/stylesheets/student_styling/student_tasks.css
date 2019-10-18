@@ -114,7 +114,11 @@
     display: flex;
     justify-content: space-between;
 }
-
+.no-work-link{
+    padding-top: 10px;
+    font-size: 18px;
+    color: grey;
+}
 .work-link{
     padding-top: 10px;
     font-size: 18px;

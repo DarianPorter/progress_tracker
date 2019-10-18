@@ -13,17 +13,18 @@ import { merge } from 'lodash'
          }
      }
 
-    addUrl(){
+    addUrl(e){
         let taskUpdate = merge({}, this.props.task)
         taskUpdate["url"] = this.state.url
-        thunkUserEditTask(taskUpdate)
+        this.props.updateTask(taskUpdate)
+        e.currentTarget.parentElement.firstElementChild.value = ""
     }
 
     sendTask(){
         if (this.state.pending == false){
             let taskUpdate = merge({}, this.props.task)
             taskUpdate["pending"] = true 
-            thunkUserEditTask(taskUpdate)
+            this.props.updateTask(taskUpdate)
         }
      }
 
@@ -52,8 +53,8 @@ import { merge } from 'lodash'
             )
         }else{
             return (
-                <p>
-                
+                <p className="no-work-link">
+                    Submit link to work
                 </p>
             )
         }
@@ -84,7 +85,7 @@ import { merge } from 'lodash'
                             {this.linkToWork(task)}
                             <div className="edit-work-link">
                                 <input type="text" /*value={this.state.url}*/ onChange={(e) => {return handleChange(this, e, "url") }} />
-                                <button onClick={ ()=>{this.makeChange()} }> Submit URL </button>
+                                <button onClick={(e) => { this.addUrl(e)} }> Submit URL </button>
                             </div>
                         </div>
                     )}

@@ -6,7 +6,8 @@ json.set! :objectives do
             json.set! :tasks do 
                 obj.tasks.each do |task|
                     json.set! task.id do 
-                        json.extract! task, :taskname, :description, :finished, :pending, :url 
+                        # json.extract! task, :taskname, :description, :finished, :pending, :url
+                        json.partial! "api/tasks/task.json.jbuilder", task: task
                     end 
                 end 
             end 

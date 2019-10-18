@@ -32,7 +32,7 @@ const Admin = ({ component: Component, path: path, loggedIn: loggedIn, exact: ex
         return(
             isAdmin ? (
                 <>
-                    <Redirect to="/admin/cohorts" />
+                    <Redirect to="/admin/aprovals" />
                     <Component {...props} />
                 </>
             ) : (

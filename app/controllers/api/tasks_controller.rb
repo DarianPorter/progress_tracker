@@ -1,7 +1,7 @@
 class Api::TasksController < ApplicationController
     def update
-       @task = Task.find(task_params[:id])
-       @task.update(task_params)
+        @task = Task.find(task_params[:id])
+        @task.update!(task_params)
        render 'api/tasks/show'
     end 
 
@@ -16,6 +16,6 @@ class Api::TasksController < ApplicationController
     end
 
     def task_params 
-        params.require(:task).permit(:id, :taskname, :description, :finished, :objective_id, :pending)
+        params.require(:task).permit(:id, :taskname, :description, :finished, :objective_id, :pending, :url)
     end 
 end
