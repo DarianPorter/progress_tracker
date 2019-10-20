@@ -1,0 +1,80 @@
+.admin-task-tabs-container{
+    border-bottom: 2px solid white;
+    
+}
+.admin-task-tabs{
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    
+}
+.admin-task-tabs p{
+    font-size: 20px;
+    padding: 10px 20px;
+    border-right: 2px solid white ;
+    border-left: 2px solid white ;
+    transition: .3s;
+}
+
+.admin-task-tabs p:hover{
+    background: white;
+    color: black;
+}
+
+.admin-task{
+    border-bottom: 2px solid white;
+    padding: 20px 45px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+.admin-task i{
+    padding-top: 5px;
+    color: #0095a0;
+    font-size: 20px;
+    transition: .3s;
+}
+
+.admin-task i:hover{
+    color: red;
+}
+
+.admin-task button{
+    border-radius: 10px;
+    background: #0095a0;
+    box-shadow: none;
+    height: 33px;
+    margin-left: 20px; 
+    transition: 0.3s;
+}
+
+.admin-task button:hover{
+    color: rgb(0, 255, 0);
+    background: black;
+}
+
+.task-display-bottom{
+    width: 230px;
+
+}
+.task-display-bottom a{
+    color: rgb(0, 149, 160);
+}
+
+.task-display-bottom a:hover{
+    color: #33bdc6
+
+}
+
+.task-display-top{
+    width: 275px;
+}
+
+.task-display-top h1{
+    font-size: 19px;
+}
+
+.task-display-top h2{
+    font-size: 14px;
+
+}

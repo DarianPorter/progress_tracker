@@ -1,45 +1,18 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import Pending from './aproval_tabs/pending'
 
 class Aproval extends React.Component {
     constructor(props) {
         super(props)
         this.state ={
-            tab: "pending"
+            tab: 0
         }
+        // debugger
     }
 
     pendingTasks(){
-        let tasks = this.props.tasks 
-        let students = this.props.students
-        return Object.keys(tasks).map((task_key, i)=>{
-            let task = tasks[task_key];
-            return(
-                <div className="admin-task" key={i}>
-                    <div className="task-display-top">
-                        <b> *Objective Name -----*</b>
-                        <p>{task.taskname}</p>
-                    </div>
-                    <div className="task-display-bottom">
-                        {students[task.user_id] ? (
-                            <p>{students[task.user_id].first_name + " " + students[task.user_id].last_name}</p>
-                        ) : (
-                            null
-                        )}
-                        { task.url ? (
-                            <a href={task.url} target="_blank"> Link to Work </a>
-                        ) : (
-                            <p> Did not Submit link</p>
-                        )}
-                    </div>
-                    <button>
-                        Aprove
-                    </button>
-                    <i className="fas fa-trash-alt"></i>
-
-                </div>
-            )
-        })
+        
     }
 
     notPendingTasks(){
@@ -55,9 +28,12 @@ class Aproval extends React.Component {
         let content;
         let tab = this.state.tab
 
-        if (tab == "pending"){
-            content = this.pendingTasks();
-        } else if (tab == "notPending"){
+        if (tab == 0){
+            content = <Pending
+                tasks={this.props.tasks}
+                students={this.props.students}
+            />
+        } else if (tab == 1){
             content = this.notPendingTasks()
         }else{
             content = this.allTasks()
@@ -65,19 +41,15 @@ class Aproval extends React.Component {
 
         return (
             <div>
-                <div className="admin-task-tabs">
-                    <p>
-                        pending tasks
-                    </p>
-                    <p>
-                        non-pending tasks
-                    </p>    
-                    <p>
-                        all tasks 
-                    </p>
+                <div className="admin-task-tabs-container">
+                    <div className="admin-task-tabs">
+                        <p>Pending Tasks</p>
+                        <p>Non-Pending Tasks</p>    
+                        <p>All Tasks </p>
+                    </div>
                 </div>
                 <ul>
-                    {content}
+                    
                 </ul>
             </div>
         )
