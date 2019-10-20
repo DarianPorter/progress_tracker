@@ -22,24 +22,25 @@
 }
 
 .admin-task{
+    box-sizing: border-box;
     border-bottom: 2px solid white;
     padding: 20px 45px;
     display: flex;
     justify-content: space-between;
     font-size: 16px;
 }
-.admin-task i{
+.fa-trash-alt{
     padding-top: 5px;
     color: #0095a0;
     font-size: 20px;
     transition: .3s;
 }
 
-.admin-task i:hover{
+.fa-trash-alt:hover{
     color: red;
 }
 
-.admin-task button{
+.admin-task-button{
     border-radius: 10px;
     background: #0095a0;
     box-shadow: none;
@@ -48,7 +49,7 @@
     transition: 0.3s;
 }
 
-.admin-task button:hover{
+.admin-task-button:hover{
     color: rgb(0, 255, 0);
     background: black;
 }
@@ -67,7 +68,13 @@
 }
 
 .task-display-top{
-    width: 275px;
+    display: flex;
+    width: 305px;
+}
+.task-display-top i{
+    padding-right: 20px;
+    font-size: 20px;
+
 }
 
 .task-display-top h1{
@@ -76,5 +83,14 @@
 
 .task-display-top h2{
     font-size: 14px;
+}
 
+.task-aproved{
+    padding-top: 5px;
+    border-radius: 10px;
+    color: rgb(0, 255, 0);
+    background: black;
+    box-shadow: none;
+    height: 33px;
+    margin-left: 20px; 
 }

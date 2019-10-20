@@ -367,3 +367,11 @@ textarea {
     color: #000;
     padding: 0.2em 0;
 }
+
+.fa-check-circle{
+    color: rgb(0, 255, 0);
+}
+
+.fa-times-circle{
+    color: red;
+}

@@ -32,7 +32,6 @@
 }
 
 .incomplete{
-    color: red;
     display: flex;
     width: fit-content;
     margin: auto;
@@ -42,7 +41,6 @@
 }
 
 .complete{
-    color: rgb(0, 255, 0);
     display: flex;
     width: fit-content;
     margin: auto;
