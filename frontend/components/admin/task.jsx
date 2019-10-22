@@ -1,4 +1,5 @@
 import React from 'react'
+import {merge} from 'lodash'
 import { connect } from 'react-redux'
 import { thunkAdminEditTask, thunkAdminDeleteTasks } from '../../actions/task_actions'
 
@@ -9,7 +10,12 @@ const Task = (props)=>{
     let task = props.task ? props.task : {};
     let student = props.student ? props.student : {}; 
     let studentName = student ? (student.first_name + " " + student.last_name) : ("")
-    
+    let handleSubmit = ()=>{ 
+        task.finished = true 
+        task.pending = false;
+        props.aproveTask(task)
+    }
+
     return (
         <div className="admin-task">
             <div className="task-display-top">
@@ -41,11 +47,11 @@ const Task = (props)=>{
                     Aproved
                 </div>
             ) : (
-                <button className="admin-task-button">
+                    <button className="admin-task-button" onClick={() => { handleSubmit()}}>
                     Aprove
                 </button>
             )}
-            <i onClick={()=>{ return props.deleteTask(props.task) }} className="fas fa-trash-alt"></i>
+            <i onClick={()=>{ props.deleteTask(props.task) }} className="fas fa-trash-alt"></i>
         </div>
     )
 }
