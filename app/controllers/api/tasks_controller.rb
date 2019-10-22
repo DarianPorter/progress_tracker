@@ -13,6 +13,7 @@ class Api::TasksController < ApplicationController
     def destroy 
         @task = Task.find(task_params[:id])
         @task.destroy
+        render 'api/tasks/show'
     end
 
     def task_params 

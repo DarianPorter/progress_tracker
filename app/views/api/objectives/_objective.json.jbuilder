@@ -1,0 +1,1 @@
+json.extract! objective, :id, :name, :finished, :user_id 

@@ -39,8 +39,8 @@
 }
 .sign-in-check:hover{
     opacity: 1;
-    border: 2px solid rgb(0, 255, 0);
-    color: rgb(0, 255, 0);
+    border: 2px solid  rgb(0, 200, 0);
+    color:  rgb(0, 200, 0);
     cursor: pointer;
 }
 .sign-in-form{
@@ -59,7 +59,7 @@
     border-radius: 3px;
 }
 .errors{
-    color: red;
+    color: #da4f3b;
     font-size: 20px;
     width: fit-content;
     margin: auto;

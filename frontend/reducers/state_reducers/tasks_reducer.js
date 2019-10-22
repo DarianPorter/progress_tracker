@@ -13,10 +13,10 @@ const taskReduder = (state = {}, action )=>{
             return merge({},state, action.tasks)
 
         case ADMIN_EDIT_TASK:
-            return merge({}, state, { [action.post.id]: action.post })
+            return merge({}, state, { [action.task.id]: action.task })
 
         case ADMIN_DELETE_TASK:
-            delete newState[action.post.id]
+            delete newState[action.task.id]
             return newState
             
         default:

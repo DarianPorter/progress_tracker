@@ -1,10 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { thunkAdminEditTask, thunkAdminDeleteTasks } from '../../actions/task_actions'
 
 const Task = (props)=>{
     if (!props.task) {return null} 
-
-    let task = props.task
-    let students = props.students
+    
+    let objective = props.objective ? props.objective : {}; 
+    let task = props.task ? props.task : {};
+    let student = props.student ? props.student : {}; 
+    let studentName = student ? (student.first_name + " " + student.last_name) : ("")
+    
     return (
         <div className="admin-task">
             <div className="task-display-top">
@@ -14,21 +19,21 @@ const Task = (props)=>{
                     <i className="far fa-times-circle"></i>
                 )}
                 <div>
-                    <h2> *Objective Name -----*</h2>
+                    <h2> {objective.name} </h2>
                     <b />
-                    <h1>{task.taskname}</h1>
+                    <h1 className="highlight"> {task.taskname} </h1>
                 </div>
             </div>
             <div className="task-display-bottom">
-                {students[task.user_id] ? (
-                    <p> Student name: {students[task.user_id].first_name + " " + students[task.user_id].last_name}</p>
+                {student ? (
+                    <p> Student name: <span className="highlight"> {studentName} </span> </p>
                 ) : (
                         null
                     )}
                 {task.url ? (
                     <a href={task.url} target="_blank"> Link to Work </a>
                 ) : (
-                        <p style={{ color: "red" }}> Did not Submit link</p>
+                        <p style={{ color: "#da4f3b" }}> Did not Submit link</p>
                     )}
             </div>
             {task.finished ? (
@@ -40,9 +45,21 @@ const Task = (props)=>{
                     Aprove
                 </button>
             )}
-            <i className="fas fa-trash-alt"></i>
+            <i onClick={()=>{ return props.deleteTask(props.task) }} className="fas fa-trash-alt"></i>
         </div>
     )
 }
 
-export default Task
+const msp = (state) =>{
+    return({
+
+    })
+}
+const mdp = (dispatch) => {
+    return ({
+        aproveTask: (task) => { dispatch(thunkAdminEditTask(task)) },
+        deleteTask: (task) => { dispatch(thunkAdminDeleteTasks(task)) }
+    })
+}
+
+export default connect(msp,mdp)(Task)

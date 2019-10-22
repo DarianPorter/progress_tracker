@@ -1,4 +1,4 @@
-export const fetchTasks = (taskInfo)=>{
+export const fetchTasks = ()=>{
     return $.ajax({
         method: "GET",
         url: `api/tasks`

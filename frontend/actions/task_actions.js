@@ -25,9 +25,10 @@ const adminEditTask = (task)=>{
     })
 }
 
-const adminDeleteTask = ()=>{
+const adminDeleteTask = (task)=>{
     return({
         type: ADMIN_DELETE_TASK,
+        task: task 
     })
 }   
 
@@ -49,4 +50,24 @@ export const thunkUserEditTask = (taskInfo)=>{
             }
         )
     }
+}
+
+export const thunkAdminEditTask = (task)=>{
+    return (dispatch)=>{
+        return ApiUtil.updateTask(task).then(
+            (payload)=>{
+                return dispatch(adminEditTask(payload))
+            }
+        )
+    }
+}
+
+export const thunkAdminDeleteTasks = (taskInfo)=>{
+    return (dispatch)=>{
+        return ApiUtil.deleteTask(taskInfo).then(
+            ()=>{
+                return dispatch(adminDeleteTask(taskInfo))
+            }
+        )
+    }   
 }

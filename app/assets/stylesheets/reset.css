@@ -369,9 +369,13 @@ textarea {
 }
 
 .fa-check-circle{
-    color: rgb(0, 255, 0);
+    color: rgb(0, 200, 0);
 }
 
 .fa-times-circle{
-    color: red;
+    color: #da4f3b;
+}
+
+button{
+    font-family: monospace;
 }

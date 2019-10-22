@@ -2,7 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 import Task from './task'
 
-
 class Aproval extends React.Component {
     constructor(props) {
         super(props)
@@ -14,7 +13,7 @@ class Aproval extends React.Component {
 
     setTabs(){
         let tab = this.state.tab
-        let tabs = ["Submitted", "Non-Submitted", "Finished" ,"All"]
+        let tabs = ["Submitted", "Non-Submitted", "Approved" ,"All"]
         let callBacks = [
             (task) => { return task.pending},
             (task) => { return (!task.pending && !task.finished)},
@@ -38,14 +37,27 @@ class Aproval extends React.Component {
     setContent(){
         let tasks = this.props.tasks
         let students = this.props.students
+        let objectives = this.props.objectives
+
         return Object.keys(tasks).map((task_key, i) => {
             let task = tasks[task_key];
+            let objective = objectives[task.objective_id]
+            let student = students[task.user_id]
             return this.cb(task) ? (
-                <Task key={i} task={task} students={students}/>
+                <Task 
+                    key={i} 
+                    task={task} 
+                    student={student} 
+                    objective={objective} 
+                    />
             ):(
                 null
             )
         })
+    }
+
+    handleSubmit(){
+
     }
 
     render() {
@@ -67,13 +79,14 @@ class Aproval extends React.Component {
 const msp = (state) => {
     return ({
         tasks: state.entities.tasks,
-        students: state.entities.users
+        students: state.entities.users,
+        objectives: state.entities.objectives
     })
 }
 
 const mdp = (dispatch) => {
     return ({
-
+    
     })
 }
 
