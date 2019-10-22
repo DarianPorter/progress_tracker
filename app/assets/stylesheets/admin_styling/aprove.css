@@ -21,7 +21,10 @@
     background: white;
     color: black;
 }
-
+.admin-tasks-ul{
+    height: 70vh;
+    overflow: scroll;
+}
 .admin-task{
     box-sizing: border-box;
     border-bottom: 2px solid white;

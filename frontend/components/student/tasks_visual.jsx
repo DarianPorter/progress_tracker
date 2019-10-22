@@ -46,7 +46,7 @@ class TasksVisuals extends React.Component {
             }
 
             if(tasksCompleted === taskKeys.length){
-                styles["background"] = "rgb(0, 255, 0)"
+                styles["background"] = "rgb(0, 200, 0)"
             }else if (tasksCompleted != 0){
                 styles["background"] = "#0095a0";
                 tasksCompleted--;

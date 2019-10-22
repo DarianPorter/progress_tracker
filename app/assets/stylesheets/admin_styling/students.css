@@ -1,0 +1,31 @@
+.student-slices{
+    
+}
+.name{
+    width: 160px;
+    margin-right: 5px;
+
+}
+.year{
+    width: 50px;
+    margin-left: 5px;
+}
+.email{
+    width: 160px;
+    margin: 0px 5px;
+    text-decoration: underline;
+    color: rgb(0, 149, 160);
+}
+
+.email:hover{
+    color: #33bdc6;
+    cursor: pointer;
+}
+.student-strip{
+    box-sizing: border-box;
+    border-bottom: 2px solid white;
+    padding: 20px 45px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}

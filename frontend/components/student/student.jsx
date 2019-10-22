@@ -26,7 +26,7 @@ class StudentPage extends React.Component {
         return(
             <div className="student">
                 <Navigation objective={objectives[key]} objectives={objectives} />
-                <div className="tasks_and_visuals">
+                <div className="tasks-and-visuals">
                     <TasksVisual objective={objectives[key]} />
                     <Tasks tasks={objectives[key].tasks}/>
                 </div>

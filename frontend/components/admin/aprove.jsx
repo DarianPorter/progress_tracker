@@ -68,7 +68,7 @@ class Aproval extends React.Component {
                         {this.setTabs()}
                     </div>
                 </div>
-                <ul>
+                <ul className="admin-tasks-ul">
                     {this.setContent()}
                 </ul>
             </div>

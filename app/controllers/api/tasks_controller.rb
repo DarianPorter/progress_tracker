@@ -2,6 +2,7 @@ class Api::TasksController < ApplicationController
     def update
         @task = Task.find(task_params[:id])
         @task.update!(task_params)
+        @task.objective.is_complete?
        render 'api/tasks/show'
     end 
 

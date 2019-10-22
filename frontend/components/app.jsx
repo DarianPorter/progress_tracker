@@ -8,7 +8,7 @@ import Admin from './admin/admin'
 import Navbar from './shared/navbar'
 import Create from './admin/create'
 import Aproval from './admin/aprove'
-import Cohorts from './admin/cohorts'
+import Students from './admin/Students'
 
 let App = (props)=>{
     return(
@@ -24,7 +24,7 @@ let App = (props)=>{
                         <Switch>
                             <ProtectedRoute path="/admin/create" component={Create} />
                             <ProtectedRoute path="/admin/aprovals" component={Aproval} />
-                            <ProtectedRoute path="/admin/cohorts" component={Cohorts} />
+                            <ProtectedRoute path="/admin/students" component={Students} />
                         </ Switch>
                     </>
                 ) : (

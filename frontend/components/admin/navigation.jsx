@@ -11,7 +11,7 @@ class Navigation extends React.Component {
 
     returnTabs(){
         let tabs = []
-        let names = ["Cohorts", "Aprovals", "Create"]
+        let names = ["Students", "Aprovals", "Create"]
         for(let i = 0; i < 3; i++){
             if (i == this.state.selected){
                 tabs.push(<p className="selected" key={i}>{ names[i] }</p>)
