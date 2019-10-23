@@ -2,16 +2,24 @@ import React from "react"
 import { connect } from "react-redux"
 import {withRouter, Route, Redirect} from "react-router-dom"
 
-const Auth = ({ component: Component, path: path, loggedIn: loggedIn, exact: exact, user_id: user_id })=>{
+const Auth = ({ component: Component, path: path, loggedIn: loggedIn, exact: exact, user_id: user_id, isAdmin })=>{
+    console.log('auth', isAdmin);
     return <Route path={path} exact={exact} render={(props) => {
 
-        return (
-            !loggedIn ? (
-                <Component {...props} />
-            ) : (
-                <Redirect to={`users/${user_id}`} />
-            )
-        )
+        // return (
+        //     !loggedIn ? (
+        //         <Component {...props} />
+        //     ) : (
+        //         <Redirect to={`users/${user_id}`} />
+        //     )
+        // )
+        if (isAdmin) {
+            return <Redirect to="/admin" />
+        } else if (loggedIn) {
+            return <Redirect to={`users/${user_id}`} />
+        } else {
+            return <Component {...props} />
+        }
     }} />
 }
 

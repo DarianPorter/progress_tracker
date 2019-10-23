@@ -11,6 +11,7 @@ import Aproval from './admin/aprove'
 import Students from './admin/Students'
 
 let App = (props)=>{
+    console.log('appisadmin', props.isAdmin)
     return(
         <>
             <Switch>
