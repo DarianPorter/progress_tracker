@@ -33,6 +33,10 @@ class Aproval extends React.Component {
     }
 
     setContent(){   
+        let tasks = this.props.tasks;
+        let objectives = this.props.objectives
+        let students = this.props.students;
+
         return Object.keys(tasks).map((task_key, i) => {
             let task = tasks[task_key];
             let objective = objectives[task.objective_id]
@@ -48,10 +52,6 @@ class Aproval extends React.Component {
                 null
             )
         })
-    }
-
-    handleSubmit(){
-
     }
 
     render() {
