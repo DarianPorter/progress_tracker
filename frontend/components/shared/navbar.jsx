@@ -10,7 +10,7 @@ const Navbar = (props)=>{
             <div className="right-nav-content">
                 <div>
                     <p>Welcome</p>
-                    <p> {`${props.user.first_name} ${props.user.last_name}`}</p>
+                    <p style={{ color: "#e49025"}}> {`${props.user.first_name} ${props.user.last_name}`}</p>
                 </div>
                 <button onClick={
                     ()=>{props.logout()}}>

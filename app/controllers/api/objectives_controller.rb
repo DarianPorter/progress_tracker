@@ -6,8 +6,8 @@ class Api::ObjectivesController < ApplicationController
 
     def create
         @objective = Objective.new(objective_params)
-        if
-            render 'api/show/index'
+        if @objective
+            render 'api/objectives/show'
         else 
             render json: ["Missing Info in Feilds(s)"], status: 401
         end 
@@ -15,6 +15,10 @@ class Api::ObjectivesController < ApplicationController
 
     def destroy
         @objective = Objective.find(params[:id])
+        @objective.tasks.destroy_all
+        @objective.destroy
+        render json: ["successfuly deleted"], status: 200
+
     end
 
     def objective_params 

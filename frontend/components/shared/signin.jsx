@@ -14,8 +14,6 @@ class SignIn extends React.Component {
     }
 
     componentDidUpdate(){
-        console.log('hiii')
-        console.log(this.props.isAdmin, this.props.userId);
         if(this.props.isAdmin){
             this.props.history.push(`/admin`)
         }else if (this.props.userId) {

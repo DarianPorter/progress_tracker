@@ -29,5 +29,5 @@
     display: flex;
     justify-content: space-between;
     font-size: 16px;
-    height: 60px;
+    min-height: 60px;
 }

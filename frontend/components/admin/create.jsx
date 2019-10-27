@@ -1,30 +1,47 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import CreateObjective from './create_objectives'
+import AddObjective from './add_objective'
 
 class Create extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            tab: 0
+        }
+        this.tabComponents = [
+            (props)=>{ return <CreateObjective props={props}/>},
+            (props)=>{return <AddObjective props={props}/>}
+        ]
+        this.content = this.tabComponents[this.state.tab]
+
     }
 
-    ammountOfTasks(amount=1){
-        let taskFeilds = []
-        for(let i = 0; i < amount; i++){
-
-        }
-        return taskFeilds
+    createTab(){
+        let tabs = ["Create Objective", "Edit Objective"]
+        return tabs.map((name, i)=>{
+            if(this.state.tab == i){
+                this.content = this.tabComponents[this.state.tab]
+                return <p key={i} className="selected"> {name} </p>    
+            }else{
+                return <p key={i} onClick={()=>{
+                    this.setState({tab: i})
+                    this.content = this.tabComponents[this.state.tab]
+                }}> {name} </p>    
+            }
+        })
     }
 
     render() {
         return (
-            <div className="create-objective-and-task">
-                <div className="create-objective">
-                    <div className="create-header"> 
-                        <h1> Create Objective </h1>
+            <div className="create">
+                <div className="create-tabs-container">
+                    <div className="create-tabs">
+                        {this.createTab()}
                     </div>
-                    {/* <button> Choose existing </button> */}
                 </div>
-                <div className="new-objective">
-                    <input type="text" placeholder="New Name"/>
+                <div>
+                    {this.content()}
                 </div>
             </div>
         )
