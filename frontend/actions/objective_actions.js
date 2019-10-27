@@ -35,3 +35,23 @@ export const thunkFetchObjectives =()=>{
         )
     }
 }
+
+export const thunkDeleteObjective = (objectiveInfo)=>{
+    return (dispatch)=>{
+        return ApiUtil.deleteObjective(objectiveInfo).then(
+            ()=>{
+                return dispatch(deleteObjective(objectiveInfo))
+            }
+        )
+    }
+}
+
+export const thunkCreateObjective =(objectiveInfo)=>{
+    return (dispatch)=>{
+        return ApiUtil.createNewObjective(objectiveInfo).then(
+            (payload)=>{
+                return dispatch(createObjective(payload))
+            }
+        )
+    }
+}
