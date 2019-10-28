@@ -7,6 +7,7 @@ class Api::ObjectivesController < ApplicationController
     def create
         @objective = Objective.new(objective_params)
         if @objective
+            @objective.save!
             render 'api/objectives/show'
         else 
             render json: ["Missing Info in Feilds(s)"], status: 401

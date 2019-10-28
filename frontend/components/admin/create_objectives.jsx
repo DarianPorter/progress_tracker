@@ -13,7 +13,10 @@ class NewStudentObjective extends React.Component{
 
     handleSubmit(){
         this.state.studentIds.map((id)=>{
-
+            this.props.createObjectives({
+                name: this.state.objectiveName,
+                user_id: id
+            })
         });
     }
 
@@ -52,14 +55,13 @@ class NewStudentObjective extends React.Component{
 
     render(){
         let button = this.state.studentIds.length != 0 ? (
-            <button onClick={()=>{handleSubmit()}}>
+            <button onClick={()=>{this.handleSubmit()}}>
                 Submit
             </button>
         ) : (
             null
         )
 
-        console.log(this.state);
         return(
             <div className="new_student_objective">
                 <div className="new-objective">

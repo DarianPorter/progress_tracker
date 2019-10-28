@@ -16,7 +16,7 @@ const objectiveReducer = (state={},action)=>{
                 return action.comment.id != comment.id
             })
         case CREATE_OBJECTIVE:
-            return merge({},state,action.objective)
+            return merge({},state,{[action.objective.id]: action.objective})
         default:
             return state
     }

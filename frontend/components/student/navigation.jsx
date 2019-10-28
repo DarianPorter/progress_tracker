@@ -8,8 +8,13 @@ class Navigation extends React.Component{
     }
 
     outOfTotal(){
-        let keys = Object.keys(this.props.objective.tasks);
-        let tasks = this.props.objective.tasks;
+
+        let tasks = this.props.objective.tasks ? (
+            this.props.objective.tasks
+        ):(
+            {}
+        );
+        let keys = Object.keys(tasks);
         let complete = 0;
         for(let i = 0; i < keys.length; i++){
             if(tasks[keys[i]].finished == true){

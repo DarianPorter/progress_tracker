@@ -47,7 +47,8 @@
 }
 
 .new-objective button:hover{
-    background: black;
+    color: black;
+    background: white;
 }
 
 .new-objective p{

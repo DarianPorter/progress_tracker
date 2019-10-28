@@ -7,8 +7,12 @@ class TasksVisuals extends React.Component {
     }
 
     outOfTotal() {
-        let keys = Object.keys(this.props.objective.tasks);
-        let tasks = this.props.objective.tasks;
+        let tasks = this.props.objective.tasks ? (
+            this.props.objective.tasks
+        ):(
+            {}
+        );
+        let keys = Object.keys(tasks);
         let complete = 0;
         for (let i = 0; i < keys.length; i++) {
             if (tasks[keys[i]].finished == true) {
@@ -35,7 +39,14 @@ class TasksVisuals extends React.Component {
 
     createChart(){
         let chartBlocks = []
-        let tasks = this.props.objective.tasks;
+        let tasks = null
+        if(this.props.objective.tasks){
+            tasks = this.props.objective.tasks
+        }else{
+            return <div className="empty-block" style={{height: "80%"}}>
+
+            </div>
+        }
         let taskKeys = Object.keys(tasks)
         let tasksCompleted = this.outOfTotal();
 

@@ -16,11 +16,18 @@ class Tasks extends React.Component {
     }
 
     render() {
+        let formattedTasks = this.formatTasks();
+        let tasks = formattedTasks.length ? (
+            formattedTasks
+        ):(
+            <h1> No Assigned Tasks </h1>
+        )
+
         return (
             <div className="tasks">
                 <h1>Tasks</h1>
                 <ul className="task-ul">
-                    {this.formatTasks()}
+                    {tasks}
                 </ul>
             </div>
         )

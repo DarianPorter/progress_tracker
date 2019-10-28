@@ -28,7 +28,13 @@ class StudentPage extends React.Component {
                 <Navigation objective={objectives[key]} objectives={objectives} />
                 <div className="tasks-and-visuals">
                     <TasksVisual objective={objectives[key]} />
-                    <Tasks tasks={objectives[key].tasks}/>
+                    <Tasks tasks={
+                        objectives[key].tasks ? (
+                            objectives[key].tasks
+                        ):(
+                            {}
+                        )
+                    }/>
                 </div>
             </div>
         )

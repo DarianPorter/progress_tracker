@@ -13,7 +13,12 @@ const Student = (props)=>{
 
         for (let i = 0; i < objectiveKeys.length; i++) {
             let objective = student.objectives[objectiveKeys[i]];
-            let taskKeys = Object.keys(objective.tasks);
+
+            let taskKeys = objective.tasks ? (
+                Object.keys(objective.tasks)
+            ):(
+                []
+            )
             for(let j = 0; j < taskKeys.length; j++){
                 let task = objective.tasks[taskKeys[i]];
                 totalTasks += 1;
