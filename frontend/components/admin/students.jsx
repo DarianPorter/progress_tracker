@@ -19,7 +19,7 @@ class Cohort extends React.Component {
 
     render(){
         return(
-            <div className="student-slices" >
+            <>
                 <div className="student-strip" style={{textDecoration: "underline"}}>
                     <p className="name" >Name</p>
                     <p style={{ paddingRight: "120px" }}>Email</p>
@@ -27,8 +27,10 @@ class Cohort extends React.Component {
                     <p>Tasks Completed</p>
                     <p>Class Year</p>
                 </div>
-                {this.setUp()}
-            </div>
+                <div className="student-slices" >
+                    {this.setUp()}
+                </div>
+            </>
         )
     }
 }

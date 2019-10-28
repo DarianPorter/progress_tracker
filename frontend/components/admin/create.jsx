@@ -1,17 +1,17 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import CreateObjective from './create_objectives'
-import AddObjective from './add_objective'
+import AddTask from './add_task'
 
 class Create extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            tab: 0
+            tab: 1
         }
         this.tabComponents = [
             (props)=>{ return <CreateObjective props={props}/>},
-            (props)=>{return <AddObjective props={props}/>}
+            (props)=>{ return <AddTask props={props}/>}
         ]
         this.content = this.tabComponents[this.state.tab]
 
