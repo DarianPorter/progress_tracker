@@ -72,3 +72,10 @@
     border-top: 2px solid white;
     border-bottom: 2px solid white;
 }
+.student-with-objective{
+    height: 35px;
+    border-bottom: 2px solid white;
+    display: flex;
+    font-size: 16px;
+    padding-top: 20px;
+}

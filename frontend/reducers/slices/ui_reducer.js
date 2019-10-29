@@ -2,7 +2,8 @@ import { merge } from 'lodash';
 import { CHANGE_OBJECTIVE_INDEX } from "../../actions/ui_actions"
 
 let preLoadedState = {
-    objectiveInd: 0
+    objectiveInd: 0,
+    objectiveName: "Testing Task Creation"
 };
 
 const uiReducer = (state = preLoadedState, action)=>{
