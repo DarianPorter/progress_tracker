@@ -4,6 +4,13 @@ import {connect} from 'react-redux'
 class AddTask extends React.Component{
     constructor(props){
         super(props)
+        this.objectives = []
+        this.state = {
+            name: "", 
+            description: "",
+            dueDate: "",
+            priority: ""
+        }
     }
 
     getStudentIds(){
@@ -18,7 +25,19 @@ class AddTask extends React.Component{
         })
         return ids
     }
-
+    
+    getAssignedTasks(){
+        let objectives = this.props.objectives
+        let name = this.props.objectiveName
+        
+        Object.keys(objective).forEach((key)=>{
+            let objective = objectives[key];
+            if(objective.name == name){
+                this.objectives.push(objective.id)
+            } 
+        })
+    }
+    
     formatStudents(ids){
         if (!this.props.students){
             return false
@@ -40,9 +59,52 @@ class AddTask extends React.Component{
             )
         })
     }
+    
+    setStateWithVal(key, e){
+        this.setState({[key]: e.currentTarget.value})
+    }
+    
+    formatDescription(){
+        let formattedStr = []
+        Object.keys(this.state).forEach((key)=>{
+            if(key != "name"){
+                formattedStr.push(this.state[key])
+            }
+        })
+        return formattedStr.join("*")
+    }
+
+    submitNewTasks(){
+        this.objectives.forEach((objective_id)=>{
+            let taskInfo = {
+                objective_id: objective_id,
+                description: this.formatDescription(),
+                taskname: this.state.name
+            };
+            debugger
+        })
+    }
+
+    fieldsComplete(){
+        let keys = Object.keys(this.state)
+        for(let i = 0; i < keys.length; i++){
+            let val = this.state[keys[i]]
+            if (val === ""){
+                return false
+            }
+        }
+        return true 
+    }
 
     render(){
         let studentIds = this.getStudentIds()
+        let submit = this.fieldsComplete() ? (
+            <button
+                onClick={() => { this.submitNewTasks()}}
+            > Submit </button>
+        ) : (
+            null
+        )
         return(
             <div className="add-task">
             
@@ -66,17 +128,38 @@ class AddTask extends React.Component{
                 </div>
                 <div className="task-form">
                     <h1> Add Task </h1>
-                    <div>
+                    <div className="task-form-name">
                         <h2> Task Name: </h2>
-                        <input type="text"/>
+                        <input 
+                            type="text"
+                            onChange={(e)=>{this.setStateWithVal("name", e)}}
+                        />
                     </div>
-                    <div>
-                        Task Description: 
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                        Duedate: 
-                        <input type="date"/>
-                        Priority: 
-                        <input type="number"/>
+                    <div className="task-form-info">
+                        <h2>Task Description:</h2> 
+                        <textarea
+                            value={this.state.description} 
+                            placeholder="Task Description" 
+                            onChange={(e)=>{this.setStateWithVal("description", e)}}
+                        > </textarea>
+                        <div className="task-form-sub-info">
+                            <h2> Duedate: </h2>
+                            <input 
+                                type="date" 
+                                onChange={(e)=>{this.setStateWithVal("dueDate", e)}}
+                            />
+                            <h2> Priority: </h2>
+                            <input 
+                                type="number" 
+                                min="1" 
+                                max="3" 
+                                placeholder="1"
+                                onChange={(e)=>{this.setStateWithVal("priority", e)}}
+                            />
+                        </div>
+                    </div>
+                    <div className="task-form-button">
+                        {submit}
                     </div>
                 </div>
             </div>

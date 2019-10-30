@@ -6,6 +6,7 @@ class User < ApplicationRecord
     has_many :objectives
 
     after_initialize :ensure_token
+    before_save :ensure_captlize
 
     def ensure_token
         self.session_token ||= SecureRandom.urlsafe_base64
@@ -13,6 +14,11 @@ class User < ApplicationRecord
 
     def password=(password)
         self.password_digest = BCrypt::Password.create(password)
+    end
+
+    def ensure_captlize
+        self.first_name.capitalize!
+        self.first_name.capitalize!
     end
 
     def reset_token!

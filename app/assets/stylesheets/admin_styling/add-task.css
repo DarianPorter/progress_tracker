@@ -1,0 +1,169 @@
+.add-task{
+    width: 90%;
+    height: 70vh;
+    border-right: 2px solid white; 
+    border-left: 2px solid white; 
+    margin: auto;
+    display: flex;
+}
+.students-task-name{
+    width: 50%;
+    border-right: 2px solid white; 
+    height: 100%;
+    
+}
+.students-task-name h1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 22px;
+}
+.students-task-name h2{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 20px;
+    margin: auto;
+    width: fit-content;
+}
+.task-form{
+    width: 50%;
+    height: 100%;    
+}
+.assigned-students{
+    height: 68%;
+    overflow: scroll;
+}
+
+.submit-new-student{
+    width: 100%;
+    display: flex;
+}
+.submit-new-student input{
+    background: black;
+    border: none;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    width: 80%;
+    color: #e49025;
+    padding-left: 5px;
+}
+.submit-new-student button{
+    width: 20%;
+    border: none;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    font-size: 16px;
+    background: #0095a0;
+    color: white;
+    transition: 0.3s;
+}
+.submit-new-student button:hover{
+    background: white;
+    color: black;
+}
+.display-objective-name{
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    padding: 9px 5px;
+}
+.display-objective-name h1:first-child{
+    padding-right: 5px;
+}
+.underline{
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+.student-with-objective{
+    height: 35px;
+    border-bottom: 2px solid white;
+    display: flex;
+    font-size: 16px;
+    padding-top: 20px;
+}
+.task-form{
+    box-sizing: border-box;
+    border-bottom: 2px solid white;
+
+}
+.task-form h1{
+    font-size: 22px;
+    padding: 10px 0px;
+    width: fit-content;
+    margin: auto;
+}
+.task-form-name{
+    padding: 10px 10px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+
+}
+.task-form-name h2{
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.task-form-name input{
+    padding-top: 5px;
+    background: black;
+    color: #e49025;
+    border: none;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    width: 100%;
+    height: 40px;
+}
+.task-form-info{
+    padding: 0px 10px;
+}
+.task-form-info textarea{
+    height: 100px;
+    width: 100%;
+    overflow: scroll;
+    resize: none;
+    box-sizing: border-box;
+    background: black;
+    color: white;
+    border: none;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+.task-form-info h2{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+.task-form-sub-info{
+    display: flex;
+    padding-top: 10px;
+}
+.task-form-sub-info input{
+    background: black;
+    color: white;
+    border: none;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    margin-right: 30px;
+    margin-left: 10px;
+}
+.task-form-button{
+    height: 80px;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    border-top: 2px solid white;
+}
+.task-form-button button{
+    border-radius: 10px;
+    background: #0095a0;
+    box-shadow: none;
+    height: 45px;
+    transition: 0.3s;
+    margin-top: 20px;
+    padding: 5px 25px;
+}
+
+.task-form-button button:hover{
+    color: white;
+    background: black;
+}
