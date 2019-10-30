@@ -3,6 +3,7 @@ export const FETCH_ALL_TASKS = "FETCH_ALL_TASKS"
 export const USER_EDIT_TASK = "USER_EDIT_TASK"
 export const ADMIN_EDIT_TASK = "ADMIN_EDIT_TASK"
 export const ADMIN_DELETE_TASK = "ADMIN_DELETE_TASK"
+export const CREATE_TASK = "CREATE_TASK"
 
 const fetchTasks = (tasks)=>{
     return({
@@ -31,6 +32,13 @@ const adminDeleteTask = (task)=>{
         task: task 
     })
 }   
+
+const createTask =(task)=>{
+    return ({
+        type: CREATE_TASK,
+        task: taskInfo
+    })
+}
 
 export const thunkFetchTasks = (taskInfo)=>{
     return (dispatch)=>{
@@ -70,4 +78,14 @@ export const thunkAdminDeleteTasks = (taskInfo)=>{
             }
         )
     }   
+}
+
+export const thunkCreateTask = (taskInfo)=>{
+    return (dispatch)=>{
+        return ApiUtil.createTask(taskInfo).then(
+            (payload)=>{
+                return dispatch(createTask(payload))
+            }
+        )
+    }
 }

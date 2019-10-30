@@ -19,3 +19,11 @@ export const updateTask = (taskInfo) =>{
         data: {task: taskInfo}
     })
 }
+
+export const createTask = (taskInfo)=>{
+    return $.ajax({
+        method: "POST",
+        url: `api/objectives/${taskInfo.objective_id}/tasks`,
+        data: {task: taskInfo}
+    })
+}

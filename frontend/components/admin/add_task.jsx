@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import { thunkCreateTask } from '../../actions/task_actions'
 
 class AddTask extends React.Component{
     constructor(props){
@@ -26,13 +27,15 @@ class AddTask extends React.Component{
         return ids
     }
     
-    getAssignedTasks(){
+    getObjectiveIds(){
         let objectives = this.props.objectives
-        let name = this.props.objectiveName
+        let name = this.props.name
         
-        Object.keys(objective).forEach((key)=>{
+        Object.keys(objectives).forEach((key)=>{
             let objective = objectives[key];
+            
             if(objective.name == name){
+                
                 this.objectives.push(objective.id)
             } 
         })
@@ -75,14 +78,17 @@ class AddTask extends React.Component{
     }
 
     submitNewTasks(){
-        this.objectives.forEach((objective_id)=>{
+        this.getObjectiveIds()
+        let objectives = this.objectives
+        for (let i = 0; i < objectives.length; i++ ){
+            let objective_id = this.objectives[i]
             let taskInfo = {
                 objective_id: objective_id,
                 description: this.formatDescription(),
                 taskname: this.state.name
             };
-            debugger
-        })
+            this.props.createTask(taskInfo)
+        }
     }
 
     fieldsComplete(){
@@ -176,7 +182,7 @@ const msp = (state)=>{
 }
 const mdp = (dispatch)=>{
     return({
-
+        createTask: (taskInfo) => { return dispatch(thunkCreateTask(taskInfo))}
     })
 }
 

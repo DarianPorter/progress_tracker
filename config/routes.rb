@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :tasks, only: [:index]
 
       resources :objectives, only: [:update, :index, :create, :destroy] do 
-        resources :tasks, only: [:destroy, :update]
+        resources :tasks, only: [:destroy, :update, :create]
       end 
     end
 end

@@ -1,7 +1,8 @@
 import {
     FETCH_ALL_TASKS,
     ADMIN_EDIT_TASK,
-    ADMIN_DELETE_TASK
+    ADMIN_DELETE_TASK,
+    CREATE_TASK
 } from "../../actions/task_actions"
 import { merge } from 'lodash'
 
@@ -15,6 +16,9 @@ const taskReduder = (state = {}, action )=>{
         case ADMIN_EDIT_TASK:
             return merge({}, state, { [action.task.id]: action.task })
 
+        case CREATE_TASK:
+            return merge({},state, {[action.task.id]: action.task})
+            
         case ADMIN_DELETE_TASK:
             delete newState[action.task.id]
             return newState
