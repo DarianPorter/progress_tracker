@@ -20,7 +20,10 @@ const Student = (props)=>{
                 []
             )
             for(let j = 0; j < taskKeys.length; j++){
-                let task = objective.tasks[taskKeys[i]];
+                let task = objective.tasks[taskKeys[j]];
+                if (!task){
+                    debugger
+                }
                 totalTasks += 1;
                 if(task.finished == true){
                     amountOfFinished += 1

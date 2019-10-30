@@ -36,7 +36,7 @@ const adminDeleteTask = (task)=>{
 const createTask =(task)=>{
     return ({
         type: CREATE_TASK,
-        task: taskInfo
+        task: task
     })
 }
 

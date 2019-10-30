@@ -5,9 +5,18 @@ class Objective < ApplicationRecord
     has_many :tasks 
 
     def is_complete?
-        self.tasks.each { |task| return false if !task.finished }
+        if self.tasks.length == 0
+            self.finished = false
+            self.save
+            return
+        end
+        self.tasks.each do |task| 
+            if !task.finished 
+                self.finished = false
+                return
+            end
+        end
         self.finished = true
         self.save!
     end
-
 end
