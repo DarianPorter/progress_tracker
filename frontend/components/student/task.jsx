@@ -5,13 +5,42 @@ import { thunkUserEditTask } from "../../actions/task_actions"
 import { merge } from 'lodash'
 
  class Task extends React.Component{
-     constructor(props){
-         super(props)
-         this.state = {
-            url: this.props.task.url,
-            pending: this.props.task.finished
-         }
-     }
+    constructor(props){
+        super(props)
+        this.state = {
+        url: this.props.task.url,
+        pending: this.props.task.finished
+        }
+    }
+    
+    formatDescription(description){
+        let parts = description.split("*")
+        if(parts.length == 1){
+            return description
+        }
+        let style = {
+            color: ""
+        }
+        switch(parseInt(parts[2])){
+            case 3:
+                style.color = "rgb(0,200,0)"
+                break;
+            case 2:
+                style.color = "yellow"
+                break;
+            case 1:
+                style.color = "red"
+                break
+
+        }
+        return( <>
+            <p>{parts[0]}</p>
+            <div className="priority-due-date">
+                <p>Due on: <span className="highlight">{ parts[1] }</span></p>
+                <p>Priority: <span style={style}>{ parts[2] }</span></p>
+            </div>
+        </>)
+    }
 
     addUrl(e){
         let taskUpdate = merge({}, this.props.task)
@@ -74,7 +103,9 @@ import { merge } from 'lodash'
                 </div>
     
                 <div className="description-and-submit">
-                    <p className="task-description">{task.description}</p>
+                    <div className="task-description">
+                        {this.formatDescription(task.description)}
+                    </div>
                     {this.handleButton(task)}
     
                 </div>

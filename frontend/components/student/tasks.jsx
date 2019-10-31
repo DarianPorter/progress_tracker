@@ -6,6 +6,7 @@ import { thunkUserEditTask } from "../../actions/task_actions"
 class Tasks extends React.Component {
     constructor(props) {
         super(props)
+        
     }
 
     formatTasks(){

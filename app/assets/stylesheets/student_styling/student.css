@@ -38,3 +38,25 @@
 .objective{
     width: fit-content;
 }
+.student-tabs{
+    box-sizing: border-box;
+    border-bottom: 2px solid white;
+}
+.student-tabs p{
+    width: fit-content;
+    padding: 15px 30px;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.student-tabs p:hover{
+    cursor: pointer;
+    background: white;
+    color:black;
+}
+.tab-container{
+    margin: auto;
+    width: fit-content;
+    display: flex;    
+}

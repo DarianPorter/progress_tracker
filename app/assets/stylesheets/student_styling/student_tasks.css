@@ -2,6 +2,7 @@
     display: flex;
     padding: 0px 50px;
     border-bottom: 2px solid white;
+    height: 67vh;
 }
 
 .task-visuals{
@@ -12,11 +13,9 @@
 
 .tasks{
     width : 60%;
-    border-right: 2px solid white;
-    
+    border-right: 2px solid white;    
 }
 .tasks ul{
-    height: 70vh;
     overflow: scroll;
 }
 /* .tasks li:last-child{
@@ -116,6 +115,7 @@
     background: black;
 }
 .task-ul{
+    height: 60vh;
     overflow: scroll;
 }
 .link-edit{
