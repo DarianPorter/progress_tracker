@@ -14,6 +14,7 @@ import { merge } from 'lodash'
     }
     
     formatDescription(description){
+        let prioritys = ["High", "Med", "Low"]
         let parts = description.split("*")
         if(parts.length == 1){
             return description
@@ -37,7 +38,7 @@ import { merge } from 'lodash'
             <p>{parts[0]}</p>
             <div className="priority-due-date">
                 <p>Due on: <span className="highlight">{ parts[1] }</span></p>
-                <p>Priority: <span style={style}>{ parts[2] }</span></p>
+                <p>Priority: <span style={style}>{ prioritys[parts[2] - 1] }</span></p>
             </div>
         </>)
     }

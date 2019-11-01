@@ -5,7 +5,7 @@ class Navigation extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            selected: 2
+            selected: 0
         }
     }
 

@@ -25,7 +25,6 @@ class Aproval extends React.Component {
                     className={i == tab ? "selected" : "" } key={i}
                     onClick={()=>{
                         this.setState({tab: i});
-                        // this.cb = callBacks[i]
                     }}
                 >{tabName} </p>
             )
@@ -36,22 +35,33 @@ class Aproval extends React.Component {
         let tasks = this.props.tasks;
         let objectives = this.props.objectives
         let students = this.props.students;
-
-        return Object.keys(tasks).map((task_key, i) => {
+        if (Object.keys(tasks).length == 0){
+            return <h1 className="nothing" > No Tasks Assigned </h1>
+        }
+        let content = Object.keys(tasks).map((task_key, i) => {
             let task = tasks[task_key];
             let objective = objectives[task.objective_id]
             let student = students[task.user_id]
-            return this.callBacks[this.state.tab](task) ? (
+            return (
                 <Task 
                     key={i} 
                     task={task} 
                     student={student} 
                     objective={objective} 
-                    />
-            ):(
-                null
+                />
             )
         })
+        let filtered = content.filter((jsxEle)=>{
+            let task = jsxEle.props.task;
+            if (this.callBacks[this.state.tab](task)){
+                return jsxEle;
+            }
+        })
+        if(filtered.length == 0){
+            return <h1 className="nothing"> No Tasks Submitted </h1>
+        }else{  
+            return filtered
+        }
     }
 
     render() {

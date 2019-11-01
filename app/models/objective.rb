@@ -4,6 +4,8 @@ class Objective < ApplicationRecord
     belongs_to :user 
     has_many :tasks 
 
+    before_save :ensure_capitalize
+
     def is_complete?
         if self.tasks.length == 0
             self.finished = false
@@ -18,5 +20,9 @@ class Objective < ApplicationRecord
         end
         self.finished = true
         self.save!
+    end
+
+    def ensure_capitalize
+        self.name.capitalize!
     end
 end

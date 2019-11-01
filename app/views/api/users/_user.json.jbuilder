@@ -1,5 +1,5 @@
 json.extract! user, :id, :first_name, :last_name, :email, :cohort_id, :is_admin
-json.class_year user.cohort.year
+json.class_year "1998"#user.cohort.year
 json.set! :objectives do 
     user.objectives.each do |obj|
         obj.is_complete?

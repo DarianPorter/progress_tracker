@@ -1,0 +1,58 @@
+.objective-picker{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,0.75);
+    top: 0px;
+    left: 0px;
+    display:flex;
+    justify-content: center;
+}
+.objective-picker-panel{
+    height: 70%;
+    max-width: 55%;
+    min-width: 500px;
+    background: rgb(39, 39, 39);
+    margin-top: 100px;
+    border: 2px solid white;
+}
+.objective-picker-panel-title{  
+    border-bottom: 2px solid white;  
+    height: 13%;
+    text-align: center;
+    box-sizing: border-box;
+}
+.objective-picker-panel-title h1{  
+    font-size: 20px;
+    padding-top: 14px;
+}
+
+.objective-picker-panel-content{
+    height: 87%;
+    overflow: scroll;
+}
+.objective-slice{
+    font-size: 16px;
+    height: 35px;
+    padding: 10px 10px;
+    border-bottom: 2px solid white;
+    transition: 0.3s;
+}
+.objective-slice:hover{
+    cursor: pointer;
+    background: rgb(65, 65, 65);
+}
+.change-objective{
+    border-top: 2px solid white;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: underline;
+    font-size: 20px;
+    color: #0095a0;
+    transition: 0.3s;
+}
+.change-objective:hover{
+    color: black;
+    background: white;
+    cursor: pointer;
+}

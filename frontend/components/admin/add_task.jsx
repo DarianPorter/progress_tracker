@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import ObjectivePicker from './objectivePicker'
 import { thunkCreateTask } from '../../actions/task_actions'
+import { thunkPresentChangeObjective } from '../../actions/ui_actions'
 
 class AddTask extends React.Component{
     constructor(props){
@@ -35,7 +37,6 @@ class AddTask extends React.Component{
             let objective = objectives[key];
             
             if(objective.name == name){
-                
                 this.objectives.push(objective.id)
             } 
         })
@@ -91,6 +92,14 @@ class AddTask extends React.Component{
         }
     }
 
+    changeObjectiveModal(){
+        return this.props.choseObjectiveSetActive ? (
+            <ObjectivePicker />
+        ) : (
+            null
+        )
+    }
+
     fieldsComplete(){
         let keys = Object.keys(this.state)
         for(let i = 0; i < keys.length; i++){
@@ -113,11 +122,14 @@ class AddTask extends React.Component{
         )
         return(
             <div className="add-task">
-            
+                {this.changeObjectiveModal()}
                 <div className="students-task-name">
                     <div className="display-objective-name">
                         <h1> Objective Name: </h1>
                         <h1 className="highlight">{this.props.name}</h1>
+                    </div>
+                    <div className="change-objective" onClick={() => { this.props.openModel(true)}}>
+                        <p>Change Objective</p>
                     </div>
                     <div className="underline">
                         <h2> Students </h2>
@@ -125,18 +137,19 @@ class AddTask extends React.Component{
                     <div className="assigned-students">
                         {this.formatStudents(studentIds)}
                     </div>
-                    <div className="submit-new-student">
+                    {/* <div className="submit-new-student">
                         <input type="text" placeholder="student name"/>
                         <button>
                             Add student
                         </button>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="task-form">
                     <h1> Add Task </h1>
                     <div className="task-form-name">
                         <h2> Task Name: </h2>
                         <input 
+                            placeholder="Task Name"
                             type="text"
                             onChange={(e)=>{this.setStateWithVal("name", e)}}
                         />
@@ -175,6 +188,7 @@ class AddTask extends React.Component{
 
 const msp = (state)=>{
     return({
+        choseObjectiveSetActive: state.ui.choseObjectiveModal,
         name: state.ui.objectiveName,
         students: state.entities.users,
         objectives: state.entities.objectives
@@ -182,7 +196,8 @@ const msp = (state)=>{
 }
 const mdp = (dispatch)=>{
     return({
-        createTask: (taskInfo) => { return dispatch(thunkCreateTask(taskInfo))}
+        createTask: (taskInfo) => { return dispatch(thunkCreateTask(taskInfo))},
+        openModel: (active) => { return dispatch(thunkPresentChangeObjective(active))}
     })
 }
 

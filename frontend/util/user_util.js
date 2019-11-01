@@ -17,3 +17,11 @@ export const fetchStudents = ()=>{
         url: "/api/users"
     })
 }
+
+export const createUser = (userInfo)=>{
+    return $.ajax({
+        method: "POST",
+        url: "/api/users",
+        data: {user: userInfo}
+    })
+}

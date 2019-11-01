@@ -28,3 +28,10 @@
 .selected{
     background: rgb(0, 149, 160);
 }
+.nothing{
+    font-size: 26px;
+    color: white;
+    text-decoration: underline;
+    padding-top: 30px;
+    text-align: center;
+}
