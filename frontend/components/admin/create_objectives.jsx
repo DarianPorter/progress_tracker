@@ -18,6 +18,7 @@ class NewStudentObjective extends React.Component{
                 user_id: id
             })
         });
+        alert("Student Objectives Created")
     }
 
     formatStudentRows(){
@@ -54,7 +55,7 @@ class NewStudentObjective extends React.Component{
     } 
 
     render(){
-        let button = this.state.studentIds.length != 0 ? (
+        let button = (this.state.studentIds.length != 0 && this.state.objectiveName!= "") ? (
             <button onClick={()=>{this.handleSubmit()}}>
                 Submit
             </button>

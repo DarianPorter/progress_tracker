@@ -21,7 +21,13 @@ class Navigation extends React.Component{
                 complete++;
             }
         }
-        return complete + "/" + keys.length
+        let style = {} 
+        complete == keys.length ? (
+            style.color = "#00c800"
+        ) : (
+            style.color = "#da4f3b"
+        )
+        return <span style={style}> {complete + "/" + keys.length} </span>
     }
 
     handleObjSwitch(direction){
@@ -49,7 +55,7 @@ class Navigation extends React.Component{
                         ></i>
                     </div>
                     <div className="objective">
-                        {this.props.objective.name + " " + this.outOfTotal()}
+                        <p> {this.props.objective.name + " "} {this.outOfTotal()}</p>
                     </div>
                     <div className="right">
                         <i 

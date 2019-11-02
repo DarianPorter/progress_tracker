@@ -7,7 +7,7 @@ class Create extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            tab: 1
+            tab: 0
         }
         this.tabComponents = [
             (props)=>{ return <CreateObjective props={props}/>},
@@ -18,7 +18,7 @@ class Create extends React.Component {
     }
 
     createTab(){
-        let tabs = ["Create Objective", "Edit Objective"]
+        let tabs = ["Create Objective", "Add Tasks"]
         return tabs.map((name, i)=>{
             if(this.state.tab == i){
                 this.content = this.tabComponents[this.state.tab]
