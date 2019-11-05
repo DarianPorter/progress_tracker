@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { thunkPresentNewStudent } from '../../actions/ui_actions'
 import Student from './student'
+import StudentForm from './new_student_form'
 
 class Cohort extends React.Component {
     constructor(props){
@@ -23,9 +24,7 @@ class Cohort extends React.Component {
             <div className="objective-picker" onClick={()=>{
                 this.props.studentFormSetActive(false)
             }}>
-                <div className="sign-up-student-form">
-
-                </div>
+                <StudentForm />
             </div>
         ) : (
             null
