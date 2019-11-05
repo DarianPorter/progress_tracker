@@ -2,11 +2,16 @@ class User < ApplicationRecord
     validates :email, :password_digest, :first_name, :last_name, presence: true
     validates :email, uniqueness: true
     
-    belongs_to :cohort
     has_many :objectives
 
     after_initialize :ensure_token
     before_save :ensure_capitalize
+
+    def class_year
+        return "0000" if read_attribute(:class_year) == nil
+        return  read_attribute(:class_year)
+ 
+    end
 
     def ensure_token
         self.session_token ||= SecureRandom.urlsafe_base64

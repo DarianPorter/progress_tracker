@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
     def index
-        @users = User.all.includes(:cohort, objectives: [:tasks])
+        @users = User.all.includes(objectives: [:tasks])
         render 'api/users/index'
     end
 
@@ -14,6 +14,6 @@ class Api::UsersController < ApplicationController
     end
 
     def user_params
-        params.permit(:user).require(:first_name, :last_name, :email, :password, :cohort)
+        params.permit(:user).require(:first_name, :last_name, :email, :password, :class_year)
     end
 end
