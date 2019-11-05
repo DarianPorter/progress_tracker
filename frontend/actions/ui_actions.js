@@ -19,7 +19,7 @@ const presentChangeObjective = (val)=>{
 
 const presentNewStudent = (val)=>{
     return({
-        type: PRESENT_CHANGE_OBJECTIVE,
+        type: PRESENT_NEW_STUDENT,
         val: val
     })
 }

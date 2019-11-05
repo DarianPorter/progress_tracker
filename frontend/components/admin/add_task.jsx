@@ -90,6 +90,8 @@ class AddTask extends React.Component{
             };
             this.props.createTask(taskInfo)
         }
+        alert("Tasks Assigned to students")
+        
     }
 
     changeObjectiveModal(){

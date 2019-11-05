@@ -24,7 +24,10 @@ class ObjectivePicker extends React.Component{
                 <div   
                     key={i}
                     className="objective-slice" 
-                    onClick={()=>{this.props.changeName(name)}}
+                    onClick={()=>{
+                        this.props.changeName(name);
+                        this.props.setModal(false);
+                    }}
                 >
                     <p>Objective Name: <span className="highlight">{name}</span></p>
                     <p>Assigned Students: <span className="highlight">{count}</span></p>

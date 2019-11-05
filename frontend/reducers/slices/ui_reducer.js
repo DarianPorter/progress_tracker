@@ -2,7 +2,8 @@ import { merge } from 'lodash';
 import { 
     CHANGE_OBJECTIVE_INDEX,
     CHANGE_OBJECTIVE_NAME,
-    PRESENT_CHANGE_OBJECTIVE
+    PRESENT_CHANGE_OBJECTIVE,
+    PRESENT_NEW_STUDENT
 } from "../../actions/ui_actions"
 
 let preLoadedState = {
@@ -25,8 +26,13 @@ const uiReducer = (state = preLoadedState, action)=>{
         case CHANGE_OBJECTIVE_NAME:
             newState = merge({}, state, {objectiveName: action.name, choseObjectiveModal: false})    
             return newState
+
         case PRESENT_CHANGE_OBJECTIVE:
             newState = merge({}, state, { choseObjectiveModal: action.val})
+            return newState
+
+        case PRESENT_NEW_STUDENT:
+            newState = merge({}, state, { createNewStudentModal: action.val })
             return newState
 
         default: 

@@ -31,3 +31,31 @@
     font-size: 16px;
     min-height: 60px;
 }
+.add-student{
+    height: 65px;
+    width: 65px;
+    border-radius: 100%;
+    background: rgba(0, 149, 160, 0.75);
+    text-align: center;
+    padding-top: 18px;
+    box-sizing: border-box;
+    font-size: 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    transition: 0.3s;
+}
+
+.add-student:hover{
+    cursor: pointer;
+    background: rgb(0, 149, 160);
+}
+
+.sign-up-student-form{
+    height: 70%;
+    max-width: 55%;
+    min-width: 500px;
+    background: rgb(39, 39, 39);
+    margin-top: 100px;
+    border: 2px solid white;
+}
