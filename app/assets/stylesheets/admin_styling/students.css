@@ -109,3 +109,41 @@
     font-size: 16px;
     padding-bottom: 5px;
 }
+
+.sign-up-form-class-year-password{
+    display: flex;
+    padding: 15px 10px;
+    justify-content: space-between;
+}
+
+.sign-up-form-class-year-password p{
+    background: none;
+    border: none;
+    font-size: 18px;
+    height: 42px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    width: 100%;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+.sign-up-form-class-year-password h1{
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+.sign-up-form-class-year-password input{
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    height: 35px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+.sign-up-student-button{
+    
+}
