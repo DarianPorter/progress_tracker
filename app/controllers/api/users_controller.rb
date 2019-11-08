@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        if @user
+        if @user.save!
             render 'api/users/show'
         else 
             render json: ["error"] # render errors 
@@ -14,6 +14,6 @@ class Api::UsersController < ApplicationController
     end
 
     def user_params
-        params.permit(:user).require(:first_name, :last_name, :email, :password, :class_year)
+        params.require(:user).permit(:first_name, :last_name, :email, :password, :class_year)
     end
 end

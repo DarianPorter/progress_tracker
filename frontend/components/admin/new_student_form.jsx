@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-// import 
+import { thunkCreateStudent } from '../../actions/user_actions' 
+
 class SignUpForm extends React.Component{
     constructor(props){
         super(props)
@@ -23,23 +24,31 @@ class SignUpForm extends React.Component{
     }
 
     setStateVals(key, e){
-        debugger
         this.setState({[key]: e.target.value})
+        const formatStr = (str,isUpcase)=>{
+            if(!str){return ""}
+            return isUpcase ? (
+                str[0].toUpperCase() + str.slice(1).toLowerCase()
+            ):(
+                str[0].toLowerCase() + str.slice(1).toLowerCase()
+            )   
+        }
         if(key == "last_name"){
-            this.setState({ password: e.target.value + this.state.class_year })
+            this.setState({ 
+                password: formatStr(e.target.value,false) + this.state.class_year 
+            })
         }else if (key == "class_year"){
-            this.setState({ password: this.state.last_name + e.target.value })
+            this.setState({ password: formatStr(this.state.last_name, false) + e.target.value })
         }
     }
 
     submitNewStudent(){
-        debugger
-        
+        this.props.newStudent(this.state)
     }
     
     render(){
         let button = this.feildsComplete() ? (
-            <button onClick={()=>{this.submitNewStudent}} className="sign-up-student-button">
+            <button onClick={()=>{this.submitNewStudent()}} className="sign-up-student-button">
                 Submit
             </button>
         ) : (
@@ -98,7 +107,7 @@ const msp = (state)=>{
 
 const mdp = (dispatch)=>{
     return({
-
+        newStudent: (studentInfo)=>{dispatch(thunkCreateStudent(studentInfo))}
     })
 }
-export default connect()(SignUpForm)
+export default connect(msp,mdp)(SignUpForm)

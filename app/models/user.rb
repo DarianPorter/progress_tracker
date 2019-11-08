@@ -10,7 +10,6 @@ class User < ApplicationRecord
     def class_year
         return "0000" if read_attribute(:class_year) == nil
         return  read_attribute(:class_year)
- 
     end
 
     def ensure_token

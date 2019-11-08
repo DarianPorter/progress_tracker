@@ -18,15 +18,21 @@ const userReducer = (state = {}, action)=>{
             return merge({},state, action.users)
 
         case NEW_STUDENT:
-            return merge({},state, {[action.user.id]: action.user})
+            return merge({},state, {[action.student.id]: action.student})
 
         case CREATE_OBJECTIVE:
             user = newState[action.objective.user_id]
+            if(!user.objectives){
+                user.objectives = {}
+            }
             user.objectives[action.objective.id] = action.objective
             return merge({},state,{[user.id]: user})
 
         case CREATE_TASK:
             user = newState[action.task.user_id];
+            if (!user.objectives[action.task.objective_id].tasks){
+                user.objectives[action.task.objective_id].tasks = {}
+            }
             let tasks = user.objectives[action.task.objective_id].tasks;
             tasks[action.task.id] = action.task;
             return merge({}, state, { [user.id]: user })

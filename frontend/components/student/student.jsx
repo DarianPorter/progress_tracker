@@ -67,8 +67,8 @@ class StudentPage extends React.Component {
     render(){
         if (!this.props.objectives){
             return (
-                <div>
-                    <h1 className="student"> No Objectives </h1>
+                <div className="no-student-objectives highlight">
+                    <h1> No Objectives </h1>
                 </div>
             )
         }
@@ -112,7 +112,7 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
     return ({
-        changeObjective: (val) => { debugger; return dispatch(changeObjectiveCurryed(val)) }
+        changeObjective: (val) => { return dispatch(changeObjectiveCurryed(val)) }
     })
 }
 
