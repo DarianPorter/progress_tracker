@@ -79,6 +79,7 @@ class StudentPage extends React.Component {
             keys[0]
         )
         let objectives = this.filterObjectives(this.props.objectives)
+        debugger
         return(
             <div className="student">
                 <Navigation objective={objectives[key]} objectives={objectives} />
@@ -90,7 +91,7 @@ class StudentPage extends React.Component {
                 <div className="tasks-and-visuals">
                     <TasksVisual objective={objectives[key]} />
                     <Tasks tasks={
-                        objectives[key].tasks ? (
+                        objectives[key].tasks && keys.length > 0 ? (
                             objectives[key].tasks
                         ):(
                             {}

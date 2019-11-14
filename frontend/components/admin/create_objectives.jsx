@@ -18,7 +18,7 @@ class NewStudentObjective extends React.Component{
                 user_id: id
             })
         });
-        alert("Student Objectives Created")
+        alert(`Student Objective "${this.state.objectiveName}" created for ${this.state.studentIds.length} student(s)`)
     }
 
     formatStudentRows(){

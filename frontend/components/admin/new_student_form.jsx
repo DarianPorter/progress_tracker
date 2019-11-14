@@ -44,6 +44,7 @@ class SignUpForm extends React.Component{
 
     submitNewStudent(){
         this.props.newStudent(this.state)
+        alert(`"${this.state.first_name} ${this.state.last_name}" has Been Saved`)
     }
     
     render(){

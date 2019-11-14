@@ -58,7 +58,7 @@ class Aproval extends React.Component {
             }
         })
         if(filtered.length == 0){
-            return <h1 className="nothing"> No Tasks Submitted </h1>
+            return <h1 className="highlight nothing"> No Tasks Submitted </h1>
         }else{  
             return filtered
         }

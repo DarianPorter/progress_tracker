@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Switch } from 'react-router-dom'
+import { Switch, Redirect } from 'react-router-dom'
 import { AuthRoute, ProtectedRoute, AdminRoute } from '../util/route_util'
 import SignIn from './shared/signin'
 import Student from './student/student'
@@ -11,6 +11,7 @@ import Aproval from './admin/aprove'
 import Students from './admin/Students'
 
 let App = (props)=>{
+    debugger
     return(
         <>
             <Switch>
@@ -28,7 +29,10 @@ let App = (props)=>{
                         </ Switch>
                     </>
                 ) : (
-                    <ProtectedRoute path="/users/:user_id" component={Student}/>
+                    <> 
+                        <Redirect to={`/users/${props.user_id}`} />
+                        <ProtectedRoute path="/users/:user_id" component={Student}/>
+                    </>
                 )}
             </Switch>
 

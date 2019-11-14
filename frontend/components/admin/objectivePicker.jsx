@@ -10,7 +10,7 @@ class ObjectivePicker extends React.Component{
     getObjectives(){
         let objectives = this.props.objectives;
         let objectiveCount = {}
-        Object.keys(objectives).map((key)=>{
+        Object.keys(objectives).reverse().map((key)=>{
             let objective = objectives[key]
             if (objectiveCount[objective.name]){
                 objectiveCount[objective.name] += 1

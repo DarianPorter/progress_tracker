@@ -90,7 +90,7 @@ class AddTask extends React.Component{
             };
             this.props.createTask(taskInfo)
         }
-        alert("Tasks Assigned to students")
+        alert(`Tasks "${this.state.name}" Assigned to student(s) ${objectives.length}`)
         
     }
 
